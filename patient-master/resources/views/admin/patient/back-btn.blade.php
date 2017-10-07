@@ -1,0 +1,1 @@
+<a href="{{ route('patient.index') }}" class="button ui big">{{ $text }}</a>

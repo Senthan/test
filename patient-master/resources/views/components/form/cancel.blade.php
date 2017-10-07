@@ -1,0 +1,1 @@
+<a href="{{ route($name, $params) }}" class="btn btn-sm btn-default">{{ $text }}</a>

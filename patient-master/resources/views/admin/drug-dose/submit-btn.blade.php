@@ -1,0 +1,1 @@
+<button type="submit" class="button ui big {{ $class }}">{{ $text }}</button>

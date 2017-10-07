@@ -1,0 +1,1 @@
+<a href="{{ route('treatment.template.index') }}" class="button ui big">{{ $text }}</a>

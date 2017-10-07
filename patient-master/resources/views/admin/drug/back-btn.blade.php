@@ -1,0 +1,1 @@
+<a href="{{ route('drug.index') }}" class="btn btn-sm btn-default">{{ $text }}</a>

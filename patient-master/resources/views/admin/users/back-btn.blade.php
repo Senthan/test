@@ -1,0 +1,1 @@
+<a href="{{ route('user.index') }}" class="button ui big">{{ $text }}</a>

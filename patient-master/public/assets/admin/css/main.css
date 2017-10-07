@@ -1,0 +1,196 @@
+@font-face {
+    font-family: OpenSans-Regular;
+    src: url('../../fonts/OpenSans-Regular.ttf');
+}
+
+html {
+
+}
+
+body {
+    /*font-family: OpenSans-Regular;*/
+    /*font-size: 14px;*/
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #fff;
+}
+
+a, a:hover{
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+.panel {
+    box-shadow: none;
+    margin-bottom: 0px;
+}
+
+.logo-wrapper {
+    text-align: center;
+    padding: 10px;
+}
+.logo {
+    width: 150px;
+}
+
+.form-section {
+    margin-top: 15px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #DCDCDC;
+}
+.form-group.required .control-label:after {
+    content:"*";
+    color:red;
+    margin-left: 3px;
+    font-size: 12px;
+}
+
+.nav-tabs {
+     border-bottom: 0 !important;
+}
+
+.nav-tab-has-error{
+    border-top-color: #a94442 !important;
+    border-left-color: #a94442 !important;
+    border-right-color: #a94442 !important;
+}
+
+table h4{
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+}
+
+.ui.labeled.icon.button, .ui.labeled.icon.buttons .button {
+    padding-left: 3.071429em!important;
+}
+
+.grid-content .ui-grid-column-menu-button-last-col {
+    margin-right: 0 !important;
+}
+.no-padding {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.group-space {
+    padding-bottom: 5px;
+}
+
+.my-group .form-control {
+    width:50%;
+}
+.my-group .smoker-text {
+    width:30%;
+}
+.my-group .smoker {
+    width:70%;
+}
+.table-reponsive-manual {
+    overflow-y: hidden;
+    margin-bottom: 25px;
+}
+.btn-patient-notes {
+    margin-top: -30px;
+}
+.form-size {
+    display: block;
+    width: 100%;
+    height: 50px;
+    font-size: 13px;
+    font-family: ubuntu, sans-serif;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #f3f8ff;
+    border: 1px solid #9AA8AD;
+    border-radius: 0px;
+}
+
+.panel .panel-heading h2{
+    font-size: 23px;
+    font-family: Ubuntu-Light;
+}
+.panel .panel-heading h3{
+    font-size: 19px;
+    font-family: Ubuntu-Light;
+}
+.panel .panel-body legend{
+    font-size: 16px;
+    font-family: Ubuntu-Light;
+}
+
+@media print {
+    body, page {
+        margin: 0;
+        box-shadow: 0;
+    }
+}
+
+.ibmes-logo {
+    margin-top: 40px;
+}
+
+.ibmes-logo img:hover {
+    opacity: 1;
+    -webkit-filter: grayscale(0%);
+    -webkit-transition: .5s ease-in-out;
+    -moz-filter: grayscale(0%);
+    -moz-transition: .5s ease-in-out;
+    -o-filter: grayscale(0%);
+    -o-transition: .5s ease-in-out;
+    filter: grayscale(0%);
+}
+
+.ibmes-logo img {
+    width: 80px;
+    opacity: 0.5;
+    -webkit-filter: grayscale(100%);
+    -webkit-transition: .5s ease-in-out;
+    -moz-filter: grayscale(100%);
+    -moz-transition: .5s ease-in-out;
+    -o-filter: grayscale(100%);
+    -o-transition: .5s ease-in-out;
+    filter: grayscale(100%);
+}
+
+.event-birthday {
+    background-color: #8BC34A;
+    border: 1px solid #4CAF50;
+    padding: 2px;
+}
+
+.event-leave {
+    background-color: #FFC107;
+    border: 1px solid #FF9800;
+    padding: 2px;
+}
+
+.event-type-item {
+    margin: 5px 0;
+}
+.calendar-event {
+    margin: 0 0 0 2%;
+}
+.ui.toggle.pink.checkbox label {
+    font-size: 13px;
+    padding-top: 0px;
+}
+.fc-event-container .label {
+    display: block !important;
+}
+.template-img {
+
+}
+
+#canvas {
+    border: 10px solid transparent;
+}
+.rectangle {
+    border: 1px solid #FF0000;
+    position: absolute;
+}
