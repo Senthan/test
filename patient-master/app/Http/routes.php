@@ -24,7 +24,7 @@ $router->group(['middleware' => 'admin', 'namespace' => 'Admin', 'prefix' => '']
             $router->get('create', ['uses' => 'PatientController@create', 'as' => 'patient.create']);
             $router->post('/', ['uses' => 'PatientController@store', 'as' => 'patient.store']);
             $router->get('{patient}/edit', ['uses' => 'PatientController@edit', 'as' => 'patient.edit']);
-            $router->patch('{patient}', ['uses' => 'PatientController@update', 'as' => 'patient.update']);
+            $router->post('patient-update', ['uses' => 'PatientController@update', 'as' => 'patient.update']);
             $router->get('{patient}/delete', ['uses' => 'PatientController@delete', 'as' => 'patient.delete']);
             $router->delete('{patient}', ['uses' => 'PatientController@destroy', 'as' => 'patient.destroy']);
             $router->get('{patient}', ['uses' => 'PatientController@show', 'as' => 'patient.show']);

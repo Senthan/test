@@ -12,9 +12,9 @@
 </div>
 
 <div class="form-group {{ ($errors->has('refferred_from')) ? 'has-error' : '' }} required">
-    {!! Form::label('refferred_from', 'Refferred from', ['class' => 'col-md-2 control-label']) !!}
+    {!! Form::label('refferred_from', 'Referred from', ['class' => 'col-md-2 control-label']) !!}
     <div class="col-md-10">
-        {!! Form::text('refferred_from', null, ['class' => 'form-control', 'placeholder' => 'Refferred From']) !!}
+        {!! Form::text('refferred_from', null, ['class' => 'form-control', 'placeholder' => 'Referred From']) !!}
         <p class="help-block">{{ ($errors->has('refferred_from') ? $errors->first('refferred_from') : '') }}</p>
     </div>
 </div>
@@ -29,9 +29,9 @@
 
 
 <div class="form-group {{ ($errors->has('co_mobidities')) ? 'has-error' : '' }} required">
-    {!! Form::label('co_mobidities', 'CO - Mobidities', ['class' => 'col-md-2 control-label']) !!}
+    {!! Form::label('co_mobidities', 'CO - Morbidities', ['class' => 'col-md-2 control-label']) !!}
     <div class="col-md-10">
-        {!! Form::textarea('co_mobidities', null, ['class' => 'form-control', 'placeholder' => 'CO - Mobidities']) !!}
+        {!! Form::textarea('co_mobidities', null, ['class' => 'form-control', 'placeholder' => 'CO - Morbidities']) !!}
         <p class="help-block">{{ ($errors->has('co_mobidities') ? $errors->first('co_mobidities') : '') }}</p>
     </div>
 </div>
@@ -45,25 +45,25 @@
 </div>
 
 <div class="form-group {{ ($errors->has('height')) ? 'has-error' : '' }} required">
-    {!! Form::label('height', 'Height', ['class' => 'col-md-2 control-label']) !!}
+    {!! Form::label('height', 'Height (cm)', ['class' => 'col-md-2 control-label']) !!}
     <div class="col-md-10">
-        {!! Form::text('height', null, ['class' => 'form-control', 'placeholder' => 'Height']) !!}
+        {!! Form::text('height', null, ['class' => 'form-control', 'placeholder' => 'Height (cm)']) !!}
         <p class="help-block">{{ ($errors->has('height') ? $errors->first('height') : '') }}</p>
     </div>
 </div>
 
 <div class="form-group {{ ($errors->has('drugs_on')) ? 'has-error' : '' }} required">
-    {!! Form::label('weight', 'Weight', ['class' => 'col-md-2 control-label']) !!}
+    {!! Form::label('weight', 'Weight (kg)', ['class' => 'col-md-2 control-label']) !!}
     <div class="col-md-10">
-        {!! Form::text('weight', null, ['class' => 'form-control', 'placeholder' => 'Weight']) !!}
+        {!! Form::text('weight', null, ['class' => 'form-control', 'placeholder' => 'Weight (kg)']) !!}
         <p class="help-block">{{ ($errors->has('weight') ? $errors->first('weight') : '') }}</p>
     </div>
 </div>
 
 <div class="form-group {{ ($errors->has('bmi')) ? 'has-error' : '' }} required">
-    {!! Form::label('bmi', 'BMI', ['class' => 'col-md-2 control-label']) !!}
+    {!! Form::label('bmi', 'BMI (kgm-2)', ['class' => 'col-md-2 control-label']) !!}
     <div class="col-md-10">
-        {!! Form::text('bmi', null, ['class' => 'form-control', 'placeholder' => 'BMI']) !!}
+        {!! Form::text('bmi', null, ['class' => 'form-control', 'placeholder' => 'BMI(kgm-2)']) !!}
         <p class="help-block">{{ ($errors->has('bmi') ? $errors->first('bmi') : '') }}</p>
     </div>
 </div>
@@ -624,38 +624,38 @@
                             <td class="{!! $patient->examinations()->where('row', 5)->where('col', 1)->where('value', 1)->where('type', 'activities_examination')->first() ? 'active' : '' !!}">Unable / no sitting Balance</td>
                             <td class="{!! $patient->examinations()->where('row', 5)->where('col', 2)->where('value', 1)->where('type', 'activities_examination')->first() ? 'active' : '' !!}">Major help, can sit</td>
                             <td class="{!! $patient->examinations()->where('row', 5)->where('col', 3)->where('value', 1)->where('type', 'activities_examination')->first() ? 'active' : '' !!}">Minor help</td>
-                            <td class="{!! $patient->examinations()->where('row', 5)->where('col', 4)->where('value', 1)->where('type', 'activities_examination')->first() ? 'active' : '' !!}">Indep</td>
+                            <td class="{!! $patient->examinations()->where('row', 5)->where('col', 4)->where('value', 1)->where('type', 'activities_examination')->first() ? 'active' : '' !!}">Independent</td>
                         </tr>
                         <tr>
                             <td>Mobility</td>
                             <td class="{!! $patient->examinations()->where('row', 6)->where('col', 1)->where('value', 1)->where('type', 'activities_examination')->first() ? 'active' : '' !!}">Immobile</td>
                             <td class="{!! $patient->examinations()->where('row', 6)->where('col', 2)->where('value', 1)->where('type', 'activities_examination')->first() ? 'active' : '' !!}">Wheel chair independent</td>
                             <td class="{!! $patient->examinations()->where('row', 6)->where('col', 3)->where('value', 1)->where('type', 'activities_examination')->first() ? 'active' : '' !!}">walks with help</td>
-                            <td class="{!! $patient->examinations()->where('row', 6)->where('col', 4)->where('value', 1)->where('type', 'activities_examination')->first() ? 'active' : '' !!}">Indep</td>
+                            <td class="{!! $patient->examinations()->where('row', 6)->where('col', 4)->where('value', 1)->where('type', 'activities_examination')->first() ? 'active' : '' !!}">Independent</td>
                         </tr>
                         <tr>
                             <td>Dressing</td>
                             <td class="{!! $patient->examinations()->where('row', 7)->where('col', 1)->where('value', 1)->where('type', 'activities_examination')->first() ? 'active' : '' !!}">Dependent</td>
                             <td class="{!! $patient->examinations()->where('row', 7)->where('col', 2)->where('value', 1)->where('type', 'activities_examination')->first() ? 'active' : '' !!}">Needs help</td>
-                            <td class="{!! $patient->examinations()->where('row', 7)->where('col', 3)->where('value', 1)->where('type', 'activities_examination')->first() ? 'active' : '' !!}">Independentp</td>
+                            <td class="{!! $patient->examinations()->where('row', 7)->where('col', 3)->where('value', 1)->where('type', 'activities_examination')->first() ? 'active' : '' !!}">Independent</td>
                             <td class="{!! $patient->examinations()->where('row', 7)->where('col', 4)->where('value', 1)->where('type', 'activities_examination')->first() ? 'active' : '' !!}"></td>
                         </tr>
                         <tr>
                             <td>Stairs</td>
                             <td class="{!! $patient->examinations()->where('row', 8)->where('col', 1)->where('value', 1)->where('type', 'activities_examination')->first() ? 'active' : '' !!}">Unable</td>
                             <td class="{!! $patient->examinations()->where('row', 8)->where('col', 2)->where('value', 1)->where('type', 'activities_examination')->first() ? 'active' : '' !!}">Needs help</td>
-                            <td class="{!! $patient->examinations()->where('row', 8)->where('col', 3)->where('value', 1)->where('type', 'activities_examination')->first() ? 'active' : '' !!}">Independentp</td>
+                            <td class="{!! $patient->examinations()->where('row', 8)->where('col', 3)->where('value', 1)->where('type', 'activities_examination')->first() ? 'active' : '' !!}">Independent</td>
                             <td class="{!! $patient->examinations()->where('row', 8)->where('col', 4)->where('value', 1)->where('type', 'activities_examination')->first() ? 'active' : '' !!}"></td>
                         </tr>
                         <tr>
                             <td>Bathing</td>
                             <td class="{!! $patient->examinations()->where('row', 9)->where('col', 1)->where('value', 1)->where('type', 'activities_examination')->first() ? 'active' : '' !!}">Dependent</td>
-                            <td class="{!! $patient->examinations()->where('row', 9)->where('col', 2)->where('value', 1)->where('type', 'activities_examination')->first() ? 'active' : '' !!}">Independentp</td>
+                            <td class="{!! $patient->examinations()->where('row', 9)->where('col', 2)->where('value', 1)->where('type', 'activities_examination')->first() ? 'active' : '' !!}">Independent</td>
                             <td class="{!! $patient->examinations()->where('row', 9)->where('col', 3)->where('value', 1)->where('type', 'activities_examination')->first() ? 'active' : '' !!}"></td>
                             <td class="{!! $patient->examinations()->where('row', 9)->where('col', 4)->where('value', 1)->where('type', 'activities_examination')->first() ? 'active' : '' !!}"></td>
                         </tr>
                         <tr>
-                            <td>Bathal Index</td>
+                            <td>Barthel Index</td>
                             <td colspan="4">
                                 {!! Form::text('bath_0', null, ['class' => 'form-control', 'placeholder' => '', 'style' => 'width: 100%;', 'id' => 'bath_0', "onkeyup" => "keyupFunction()"]) !!}
                             </td>

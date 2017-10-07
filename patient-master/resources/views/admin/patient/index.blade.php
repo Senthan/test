@@ -66,10 +66,10 @@
                     editDropdownOptionsArray: [{ id:'Male', ward: 'Male'}, {id:'Female', ward: 'Female'}, {id:'Other', ward: 'Other'}], editDropdownValueLabel: 'ward', minWidth: 80, width: 80},
                 { displayName: 'Presenting complain', field: 'diagnosis',
                     cellTemplate:'<div ng-repeat="(key, item) in row.entity.diagnosis track by $index">@{{item.presenting_complain}}</div>',minWidth: 190, width: 190, enableCellEdit: false},
-                { displayName: 'Motor examination', field: 'motor_examination', minWidth: 150, width: 150},
-                { displayName: 'Sensory', field: 'sensory', minWidth: 150, width: 150},
-                { displayName: 'Activities of daily living', field: 'activities_of_daily_living', minWidth: 150, width: 150},
-                { displayName: 'Pain Scale', field: 'pain', minWidth: 150, width: 150},
+                { displayName: 'Motor examination', field: 'motor_examination', enableCellEdit: false, minWidth: 150, width: 150},
+                { displayName: 'Sensory', field: 'sensory', enableCellEdit: false, minWidth: 150, width: 150},
+                { displayName: 'Activities of daily living', field: 'activities_of_daily_living', enableCellEdit: false, minWidth: 150, width: 150},
+                { displayName: 'Pain Scale', field: 'pain', enableCellEdit: false, minWidth: 150, width: 150},
                 { displayName: 'Xary', field: 'diagnosis',
                     cellTemplate:'<div ng-repeat="(key, item) in row.entity.diagnosis track by $index">@{{item.x_ray}}</div>',minWidth: 190, width: 190, enableCellEdit: false},
                 { displayName: 'CT Scan', field: 'diagnosis',
@@ -101,13 +101,15 @@
                     $scope.setSelection(gridApi);
                 });
 
+                var updateUrl ="{{ route('patient.update') }}";
+
                 gridApi.edit.on.afterCellEdit($scope, function (rowEntity, colDef, newValue, oldValue) {
                     var data = {};
                     data.id = rowEntity.id;
                     data.field_name = colDef.name;
                     data.new_value = newValue;
 
-                    $http.post($scope.moduleUrl + '?ajax=true', data).success(function (response) {
+                    $http.post(updateUrl, data).success(function (response) {
 
                     });
                 });

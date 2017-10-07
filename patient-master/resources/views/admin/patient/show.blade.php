@@ -44,9 +44,9 @@
                             </th>
                         </tr>
                         <tr>
-                            <th> Height </th>
-                            <th> Weight </th>
-                            <th> BMI </th>
+                            <th> Height (cm) </th>
+                            <th> Weight (kg) </th>
+                            <th> BMI (kgm-2) </th>
 
                         </tr>
                         </thead>
@@ -63,7 +63,7 @@
 
                     <div class="ui piled segments">
                         <div class="ui segment">
-                            <h4 class="ui header">Co Mobidities</h4>
+                            <h4 class="ui header">Co Morbidities</h4>
                             <p>{!! $patient->diagnosis()->first()->co_mobidities or '-----' !!}</p>
                         </div>
                         <div class="ui segment">
@@ -71,7 +71,7 @@
                             <p>{!! $patient->diagnosis()->first()->drugs_on or '-----' !!}</p>
                         </div>
                         <div class="ui segment">
-                            <h4 class="ui header">Refferred from</h4>
+                            <h4 class="ui header">Referred from</h4>
                             <p>{!! $patient->diagnosis()->first()->refferred_from or '-----' !!}</p>
                         </div>
                         <div class="ui segment">
@@ -372,7 +372,7 @@
                         </tr>
                         <tr>
                             <td></td>
-                            <td>Hoffman sign</td>
+                            <td>Hoffmann's sign</td>
                             <td class="{!! $patient->examinations()->where('row', 6)->where('col', 2)->where('value', 1)->where('type', 'reflexes_examination')->first() ? 'active' : '' !!}"></td>
                             <td class="{!! $patient->examinations()->where('row', 6)->where('col', 3)->where('value', 1)->where('type', 'reflexes_examination')->first() ? 'active' : '' !!}"></td>
                             <td class="{!! $patient->examinations()->where('row', 6)->where('col', 4)->where('value', 1)->where('type', 'reflexes_examination')->first() ? 'active' : '' !!}"></td>
@@ -425,7 +425,7 @@
                         </thead>
                         <tbody>
                         <tr>
-                            <td>Cerrvical</td>
+                            <td>Cervical</td>
                             <td class="{!! $patient->examinations()->where('row', 0)->where('col', 1)->where('value', 1)->where('type', 'sensory_impairment')->first() ? 'active' : '' !!}">C1</td>
                             <td class="{!! $patient->examinations()->where('row', 0)->where('col', 2)->where('value', 1)->where('type', 'sensory_impairment')->first() ? 'active' : '' !!}">C2</td>
                             <td class="{!! $patient->examinations()->where('row', 0)->where('col', 3)->where('value', 1)->where('type', 'sensory_impairment')->first() ? 'active' : '' !!}">C3</td>
@@ -485,7 +485,7 @@
                             <td></td>
                         </tr>
                         <tr>
-                            <td>Caccxygeal</td>
+                            <td>Coccygeal</td>
                             <td class="{!! $patient->examinations()->where('row', 4)->where('col', 1)->where('value', 1)->where('type', 'sensory_impairment')->first() ? 'active' : '' !!}">Cx</td>
                             <td></td>
                             <td></td>
@@ -510,16 +510,17 @@
                             </th>
                         </tr>
                         <tr>
-                            <td class="{!! $patient->examinations()->where('row', 0)->where('col', 0)->where('value', 1)->where('type', 'pain_scale')->first() ? 'active' : '' !!}">1</td>
-                            <td class="{!! $patient->examinations()->where('row', 0)->where('col', 1)->where('value', 1)->where('type', 'pain_scale')->first() ? 'active' : '' !!}">2</td>
-                            <td class="{!! $patient->examinations()->where('row', 0)->where('col', 2)->where('value', 1)->where('type', 'pain_scale')->first() ? 'active' : '' !!}">3</td>
-                            <td class="{!! $patient->examinations()->where('row', 0)->where('col', 3)->where('value', 1)->where('type', 'pain_scale')->first() ? 'active' : '' !!}">4</td>
-                            <td class="{!! $patient->examinations()->where('row', 0)->where('col', 4)->where('value', 1)->where('type', 'pain_scale')->first() ? 'active' : '' !!}">5</td>
-                            <td class="{!! $patient->examinations()->where('row', 0)->where('col', 5)->where('value', 1)->where('type', 'pain_scale')->first() ? 'active' : '' !!}">6</td>
-                            <td class="{!! $patient->examinations()->where('row', 0)->where('col', 6)->where('value', 1)->where('type', 'pain_scale')->first() ? 'active' : '' !!}">7</td>
-                            <td class="{!! $patient->examinations()->where('row', 0)->where('col', 7)->where('value', 1)->where('type', 'pain_scale')->first() ? 'active' : '' !!}">8</td>
-                            <td class="{!! $patient->examinations()->where('row', 0)->where('col', 8)->where('value', 1)->where('type', 'pain_scale')->first() ? 'active' : '' !!}">9</td>
-                            <td class="{!! $patient->examinations()->where('row', 0)->where('col', 9)->where('value', 1)->where('type', 'pain_scale')->first() ? 'active' : '' !!}">10</td>
+                            <td class="{!! $patient->examinations()->where('row', 0)->where('col', 0)->where('value', 1)->where('type', 'pain_scale')->first() ? 'active' : '' !!}">0</td>
+                            <td class="{!! $patient->examinations()->where('row', 0)->where('col', 1)->where('value', 1)->where('type', 'pain_scale')->first() ? 'active' : '' !!}">1</td>
+                            <td class="{!! $patient->examinations()->where('row', 0)->where('col', 2)->where('value', 1)->where('type', 'pain_scale')->first() ? 'active' : '' !!}">2</td>
+                            <td class="{!! $patient->examinations()->where('row', 0)->where('col', 3)->where('value', 1)->where('type', 'pain_scale')->first() ? 'active' : '' !!}">3</td>
+                            <td class="{!! $patient->examinations()->where('row', 0)->where('col', 4)->where('value', 1)->where('type', 'pain_scale')->first() ? 'active' : '' !!}">4</td>
+                            <td class="{!! $patient->examinations()->where('row', 0)->where('col', 5)->where('value', 1)->where('type', 'pain_scale')->first() ? 'active' : '' !!}">5</td>
+                            <td class="{!! $patient->examinations()->where('row', 0)->where('col', 6)->where('value', 1)->where('type', 'pain_scale')->first() ? 'active' : '' !!}">6</td>
+                            <td class="{!! $patient->examinations()->where('row', 0)->where('col', 7)->where('value', 1)->where('type', 'pain_scale')->first() ? 'active' : '' !!}">7</td>
+                            <td class="{!! $patient->examinations()->where('row', 0)->where('col', 8)->where('value', 1)->where('type', 'pain_scale')->first() ? 'active' : '' !!}">8</td>
+                            <td class="{!! $patient->examinations()->where('row', 0)->where('col', 9)->where('value', 1)->where('type', 'pain_scale')->first() ? 'active' : '' !!}">9</td>
+                            <td class="{!! $patient->examinations()->where('row', 0)->where('col', 10)->where('value', 1)->where('type', 'pain_scale')->first() ? 'active' : '' !!}">10</td>
                         </tr>
                         </thead>
                     </table>
@@ -532,7 +533,7 @@
                             </th>
                         </tr>
                         <tr>
-                            <td>Bathal Index</td>
+                            <td>Barthel Index</td>
                             <td colspan="4">
                                 {!! $bath_0 or '-----' !!}
                             </td>
@@ -601,7 +602,7 @@
                         </tr>
                         <tr>
                             <th> Refferal </th>
-                            <th> Reffered to </th>
+                            <th> Refered to </th>
                             <th> Report </th>
                         </tr>
                         </thead>
@@ -761,7 +762,7 @@
                             <td>
                                 @foreach($surgicalFollowup->examinationFollowups as $examinationFollowup)
                                     @if($examinationFollowup->type == 'activities_examination_followup' && $examinationFollowup->row == 10 && $examinationFollowup->col == 1)
-                                        Bathal Index : {!! $examinationFollowup->value or '-----' !!}
+                                        Barthel Index : {!! $examinationFollowup->value or '-----' !!}
                                     @endif
                                 @endforeach
                             </td>

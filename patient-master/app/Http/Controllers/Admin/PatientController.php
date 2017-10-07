@@ -120,7 +120,7 @@ class PatientController extends Controller
 
         if (request()->ajax()) {
             $patient = Patient::with('diagnosis', 'examinations', 'surgicalFollowup',
-                'nonSurgicalFollowup', 'surgical')->get()->values();
+                'nonSurgicalFollowup', 'surgical')->get()->sortByDesc('created_at')->values();
             return response()->json($patient);
         }
 
@@ -138,6 +138,11 @@ class PatientController extends Controller
         return redirect()->route('patient.index');
     }
 
+    public function update()
+    {
+        $patient = Patient::find(request()->id);
+        $patient->update([request()->field_name => request()->new_value]);
+    }
     /**
      * @param Patient $patient
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View

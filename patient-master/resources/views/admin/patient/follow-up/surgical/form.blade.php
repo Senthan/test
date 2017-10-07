@@ -341,7 +341,7 @@
                         </tr>
                         <tr>
                             <td></td>
-                            <td>Hoffman sign</td>
+                            <td>Hoffmann's sign</td>
                             <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 6)->where('col', 2)->where('value', 1)->where('type', 'reflexes_examination_followup')->count() ? 'active' : '' !!}"></td>
                             <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 6)->where('col', 3)->where('value', 1)->where('type', 'reflexes_examination_followup')->count() ? 'active' : '' !!}"></td>
                             <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 6)->where('col', 4)->where('value', 1)->where('type', 'reflexes_examination_followup')->count() ? 'active' : '' !!}"></td>
@@ -407,7 +407,7 @@
                         </thead>
                         <tbody>
                         <tr>
-                            <td>Cerrvical</td>
+                            <td>Cervical</td>
                             <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 0)->where('col', 1)->where('value', 1)->where('type', 'sensory_impairment_followup')->count() ? 'active' : '' !!}">C1</td>
                             <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 0)->where('col', 2)->where('value', 1)->where('type', 'sensory_impairment_followup')->count() ? 'active' : '' !!}">C2</td>
                             <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 0)->where('col', 3)->where('value', 1)->where('type', 'sensory_impairment_followup')->count() ? 'active' : '' !!}">C3</td>
@@ -467,7 +467,7 @@
                             <td></td>
                         </tr>
                         <tr>
-                            <td>Caccxygeal</td>
+                            <td>Coccygeal</td>
                             <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 4)->where('col', 1)->where('value', 1)->where('type', 'sensory_impairment_followup')->count() ? 'active' : '' !!}">Cx</td>
                             <td></td>
                             <td></td>
@@ -501,16 +501,17 @@
                     <table class="ui celled table pain-scale">
                         <thead>
                         <tr>
-                            <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 0)->where('col', 0)->where('value', 1)->where('type', 'pain_scale_followup')->count() ? 'active' : '' !!}">1</td>
-                            <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 0)->where('col', 1)->where('value', 1)->where('type', 'pain_scale_followup')->count() ? 'active' : '' !!}">2</td>
-                            <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 0)->where('col', 2)->where('value', 1)->where('type', 'pain_scale_followup')->count() ? 'active' : '' !!}">3</td>
-                            <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 0)->where('col', 3)->where('value', 1)->where('type', 'pain_scale_followup')->count() ? 'active' : '' !!}">4</td>
-                            <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 0)->where('col', 4)->where('value', 1)->where('type', 'pain_scale_followup')->count() ? 'active' : '' !!}">5</td>
-                            <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 0)->where('col', 5)->where('value', 1)->where('type', 'pain_scale_followup')->count() ? 'active' : '' !!}">6</td>
-                            <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 0)->where('col', 6)->where('value', 1)->where('type', 'pain_scale_followup')->count() ? 'active' : '' !!}">7</td>
-                            <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 0)->where('col', 7)->where('value', 1)->where('type', 'pain_scale_followup')->count() ? 'active' : '' !!}">8</td>
-                            <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 0)->where('col', 8)->where('value', 1)->where('type', 'pain_scale_followup')->count() ? 'active' : '' !!}">9</td>
-                            <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 0)->where('col', 9)->where('value', 1)->where('type', 'pain_scale_followup')->count() ? 'active' : '' !!}">10</td>
+                            <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 0)->where('col', 0)->where('value', 1)->where('type', 'pain_scale_followup')->count() ? 'active' : '' !!}">01</td>
+                            <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 0)->where('col', 1)->where('value', 1)->where('type', 'pain_scale_followup')->count() ? 'active' : '' !!}">1</td>
+                            <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 0)->where('col', 2)->where('value', 1)->where('type', 'pain_scale_followup')->count() ? 'active' : '' !!}">2</td>
+                            <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 0)->where('col', 3)->where('value', 1)->where('type', 'pain_scale_followup')->count() ? 'active' : '' !!}">3</td>
+                            <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 0)->where('col', 4)->where('value', 1)->where('type', 'pain_scale_followup')->count() ? 'active' : '' !!}">4</td>
+                            <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 0)->where('col', 5)->where('value', 1)->where('type', 'pain_scale_followup')->count() ? 'active' : '' !!}">5</td>
+                            <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 0)->where('col', 6)->where('value', 1)->where('type', 'pain_scale_followup')->count() ? 'active' : '' !!}">6</td>
+                            <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 0)->where('col', 7)->where('value', 1)->where('type', 'pain_scale_followup')->count() ? 'active' : '' !!}">7</td>
+                            <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 0)->where('col', 8)->where('value', 1)->where('type', 'pain_scale_followup')->count() ? 'active' : '' !!}">8</td>
+                            <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 0)->where('col', 9)->where('value', 1)->where('type', 'pain_scale_followup')->count() ? 'active' : '' !!}">9</td>
+                            <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 0)->where('col', 10)->where('value', 1)->where('type', 'pain_scale_followup')->count() ? 'active' : '' !!}">10</td>
                         </tr>
                         </thead>
                     </table>
@@ -580,38 +581,38 @@
                             <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 5)->where('col', 1)->where('value', 1)->where('type', 'activities_examination_followup')->count() ? 'active' : '' !!}">Unable / no sitting Balance</td>
                             <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 5)->where('col', 2)->where('value', 1)->where('type', 'activities_examination_followup')->count() ? 'active' : '' !!}">Major help, can sit</td>
                             <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 5)->where('col', 3)->where('value', 1)->where('type', 'activities_examination_followup')->count() ? 'active' : '' !!}">Minor help</td>
-                            <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 5)->where('col', 4)->where('value', 1)->where('type', 'activities_examination_followup')->count() ? 'active' : '' !!}">Indep</td>
+                            <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 5)->where('col', 4)->where('value', 1)->where('type', 'activities_examination_followup')->count() ? 'active' : '' !!}">Independent</td>
                         </tr>
                         <tr>
                             <td>Mobility</td>
                             <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 6)->where('col', 1)->where('value', 1)->where('type', 'activities_examination_followup')->count() ? 'active' : '' !!}">Immobile</td>
                             <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 6)->where('col', 2)->where('value', 1)->where('type', 'activities_examination_followup')->count() ? 'active' : '' !!}">Wheel chair independent</td>
                             <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 6)->where('col', 3)->where('value', 1)->where('type', 'activities_examination_followup')->count() ? 'active' : '' !!}">walks with help</td>
-                            <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 6)->where('col', 4)->where('value', 1)->where('type', 'activities_examination_followup')->count() ? 'active' : '' !!}">Indep</td>
+                            <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 6)->where('col', 4)->where('value', 1)->where('type', 'activities_examination_followup')->count() ? 'active' : '' !!}">Independent</td>
                         </tr>
                         <tr>
                             <td>Dressing</td>
                             <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 7)->where('col', 1)->where('value', 1)->where('type', 'activities_examination_followup')->count() ? 'active' : '' !!}">Dependent</td>
                             <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 7)->where('col', 2)->where('value', 1)->where('type', 'activities_examination_followup')->count() ? 'active' : '' !!}">Needs help</td>
-                            <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 7)->where('col', 3)->where('value', 1)->where('type', 'activities_examination_followup')->count() ? 'active' : '' !!}">Independentp</td>
+                            <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 7)->where('col', 3)->where('value', 1)->where('type', 'activities_examination_followup')->count() ? 'active' : '' !!}">Independent</td>
                             <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 7)->where('col', 4)->where('value', 1)->where('type', 'activities_examination_followup')->count() ? 'active' : '' !!}"></td>
                         </tr>
                         <tr>
                             <td>Stairs</td>
                             <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 8)->where('col', 1)->where('value', 1)->where('type', 'activities_examination_followup')->count() ? 'active' : '' !!}">Unable</td>
                             <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 8)->where('col', 2)->where('value', 1)->where('type', 'activities_examination_followup')->count() ? 'active' : '' !!}">Needs help</td>
-                            <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 8)->where('col', 3)->where('value', 1)->where('type', 'activities_examination_followup')->count() ? 'active' : '' !!}">Independentp</td>
+                            <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 8)->where('col', 3)->where('value', 1)->where('type', 'activities_examination_followup')->count() ? 'active' : '' !!}">Independent</td>
                             <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 8)->where('col', 4)->where('value', 1)->where('type', 'activities_examination_followup')->count() ? 'active' : '' !!}"></td>
                         </tr>
                         <tr>
                             <td>Bathing</td>
                             <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 9)->where('col', 1)->where('value', 1)->where('type', 'activities_examination_followup')->count() ? 'active' : '' !!}">Dependent</td>
-                            <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 9)->where('col', 2)->where('value', 1)->where('type', 'activities_examination_followup')->count() ? 'active' : '' !!}">Independentp</td>
+                            <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 9)->where('col', 2)->where('value', 1)->where('type', 'activities_examination_followup')->count() ? 'active' : '' !!}">Independent</td>
                             <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 9)->where('col', 3)->where('value', 1)->where('type', 'activities_examination_followup')->count() ? 'active' : '' !!}"></td>
                             <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 9)->where('col', 4)->where('value', 1)->where('type', 'activities_examination_followup')->count() ? 'active' : '' !!}"></td>
                         </tr>
                         <tr>
-                            <td>Bathal Index</td>
+                            <td>Barthel Index</td>
                             <td colspan="4">
                                 {!! Form::text('bath_0', null, ['class' => 'form-control', 'placeholder' => '', 'style' => 'width: 100%;', 'id' => 'bath_0', "onkeyup" => "keyupFunction()"]) !!}
                             </td>
