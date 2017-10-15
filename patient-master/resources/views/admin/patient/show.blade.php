@@ -46,16 +46,16 @@
                         <tr>
                             <th> Height (cm) </th>
                             <th> Weight (kg) </th>
-                            <th> BMI (kgm-2) </th>
+                            <th> BMI (10^-2kg) </th>
 
                         </tr>
                         </thead>
                         <tbody>
                             <tr>
 
-                            <td> {!! $patient->diagnosis()->first()->height or '' !!}</td>
-                            <td> {!! $patient->diagnosis()->first()->weight or '' !!}</td>
-                            <td> {!! $patient->diagnosis()->first()->bmi or '' !!}</td>
+                            <td> {!! $patient->diagnosis()->first() ? $patient->diagnosis()->first()->height .' cm' : '' !!}</td>
+                            <td> {!! $patient->diagnosis()->first() ? $patient->diagnosis()->first()->weight . ' kg' : '' !!}</td>
+                            <td> {!! $patient->diagnosis()->first() ? $patient->diagnosis()->first()->bmi . ' x 10^-2 kg' : '' !!}</td>
 
                            </tr>
                         </tbody>
@@ -688,14 +688,6 @@
                                 @if($surgicalFollowup->post_up_months != 0)
                                     {!! $surgicalFollowup->post_up_months . ' months' !!}
                                 @endif
-                            </td>
-                        @endforeach
-                    </tr>
-                    <tr>
-                        <th>Complain</th>
-                        @foreach($patient->surgicalFollowup as $surgicalFollowup)
-                            <td>
-                                {!! $surgicalFollowup->complain or '' !!}
                             </td>
                         @endforeach
                     </tr>

@@ -37,6 +37,7 @@
         examination.col = 1;
         examination.type = 'activities_examination';
         examination.value = document.getElementById("bath_0").value;
+        examination.diagnosis = 'diagnosis';
         updateExamination(examination, url);
     }
 
@@ -79,6 +80,7 @@
                     examination.type = 'pain_scale';
                     examination.value = 1;
                 }
+                examination.diagnosis = 'diagnosis';
                 updateExamination(examination, url);
             });
 
@@ -104,6 +106,7 @@
                     examination.type = 'sensory_impairment';
                     examination.value = 1;
                 }
+                examination.diagnosis = 'diagnosis';
                 updateExamination(examination, url);
             });
 
@@ -129,6 +132,7 @@
                     examination.type = 'root_examination';
                     examination.value = 1;
                 }
+                examination.diagnosis = 'diagnosis';
                 updateExamination(examination, url);
             });
 
@@ -155,6 +159,7 @@
                     examination.type = 'reflexes_examination';
                     examination.value = 1;
                 }
+                examination.diagnosis = 'diagnosis';
                 updateExamination(examination, url);
             });
 
@@ -182,6 +187,7 @@
                     examination.type = 'activities_examination';
                     examination.value = 1;
                 }
+                examination.diagnosis = 'diagnosis';
                 updateExamination(examination, url);
             });
 
@@ -191,6 +197,7 @@
                 examination.col = 1;
                 examination.type = 'activities_examination';
                 examination.value = $( "#bath_0" ).val();
+                examination.diagnosis = 'diagnosis';
                 updateExamination(examination, url);
             });
 

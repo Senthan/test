@@ -106,8 +106,44 @@
         $scope.authUserId ='{!! Auth::user()->id !!}';
         var person_name = $scope.authUserName ='{!! Auth::user()->name !!}';
         var url = "{{ url('/') }}";
-        var port = {{ env('RT_SERVER_PORT', '6002') }};
-        var socket = io(url + ':' + port + '/');
+        var port = "{{ env('RT_SERVER_PORT', '6002') }}";
+        if("{{ env('RT_SERVER_ENABLE', false) }}") {
+            var socket = io(url + ':' + port + '/');
+
+            socket.on("chat-room.1:App\\Events\\ChatMessageWasReceived", function (message) {
+                $scope.messages.push({msg:message.chatMessage.message, userName: message.user.name, user_id: message.user.id});
+                $scope.$apply();
+                scrollDown();
+            });
+
+            socket.on('onlineUsers', function (data) {
+                var userIds = _.union(_.pluck(data.users, 'id'));
+                userIds.forEach(function(item, index) {
+                    if(_.isNumber(item)) {
+                        $('.' + data.users[item].name + item).addClass('online');
+                    }
+                });
+            });
+
+            socket.on('connect', function () {
+                socket.emit('newUser', user);
+                socket.on('disconnected', function() {
+                    //                $('.' + person_name).addClass('offline');
+                    socket.emit('delUser', user);
+                });
+            });
+
+            socket.on('offlineUsers', function (data) {
+                var userIds = _.union(_.pluck(data.users, 'id'));
+                userIds.forEach(function(item, index) {
+                    if(_.isNumber(item)) {
+                        $('.' + data.users[item].name + item).removeClass('online');
+                    }
+                });
+            });
+
+
+        }
 
         $scope.messages = [];
 
@@ -121,39 +157,8 @@
 //            localStorage.setItem("messages", JSON.stringify($scope.messages));
 //        }
 
-        socket.on("chat-room.1:App\\Events\\ChatMessageWasReceived", function (message) {
-            $scope.messages.push({msg:message.chatMessage.message, userName: message.user.name, user_id: message.user.id});
-            $scope.$apply();
-            scrollDown();
-        });
 
         var user = {!! Auth::User() !!}
-
-        socket.on('onlineUsers', function (data) {
-            var userIds = _.union(_.pluck(data.users, 'id'));
-            userIds.forEach(function(item, index) {
-                if(_.isNumber(item)) {
-                    $('.' + data.users[item].name + item).addClass('online');
-                }
-            });
-        });
-
-        socket.on('connect', function () {
-            socket.emit('newUser', user);
-            socket.on('disconnected', function() {
-                //                $('.' + person_name).addClass('offline');
-                socket.emit('delUser', user);
-            });
-        });
-
-        socket.on('offlineUsers', function (data) {
-            var userIds = _.union(_.pluck(data.users, 'id'));
-            userIds.forEach(function(item, index) {
-                if(_.isNumber(item)) {
-                    $('.' + data.users[item].name + item).removeClass('online');
-                }
-            });
-        });
 
         $scope.msgClick = function() {
             if($scope.message) {

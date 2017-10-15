@@ -505,7 +505,11 @@ class PatientController extends Controller
     public function updateExamination(Patient $patient)
     {
         $data = request()->all();
-        $createExamination = $patient->examination()->where('type', $data['data']['type'])->where('row', $data['data']['row'])->where('col', $data['data']['col'])->first();
+        if(isset($data['diagnosis']) && $data['diagnosis'] == 'diagnosis') {
+            $createExamination = Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('type', $data['data']['type'])->where('row', $data['data']['row'])->where('col', $data['data']['col'])->first();
+        } else {
+            $createExamination = Examination::where('patient_id', $patient->id)->where('type', $data['data']['type'])->where('row', $data['data']['row'])->where('col', $data['data']['col'])->first();
+        }
         if (isset($data['data'])) {
             if ($createExamination) {
                 $createExamination->value = $data['data']['value'];
