@@ -263,7 +263,6 @@
                         <tr class="item1">
                             <td>S1</td>
                             <td>Ankle plantar flexors</td>
-                            <td></td>
                             <td class="{!! $patient->examinations()->where('row', 8)->where('col', 2)->where('value', 1)->where('type', 'root_examination')->first() ? 'active' : '' !!}"></td>
                             <td class="{!! $patient->examinations()->where('row', 8)->where('col', 3)->where('value', 1)->where('type', 'root_examination')->first() ? 'active' : '' !!}"></td>
                             <td class="{!! $patient->examinations()->where('row', 8)->where('col', 4)->where('value', 1)->where('type', 'root_examination')->first() ? 'active' : '' !!}"></td>
