@@ -46,7 +46,7 @@
                         <tr>
                             <th> Height (cm) </th>
                             <th> Weight (kg) </th>
-                            <th> BMI (10^-2kg) </th>
+                            <th> BMI (kgm^-2) </th>
 
                         </tr>
                         </thead>

@@ -61,7 +61,7 @@
 </div>
 
 <div class="form-group {{ ($errors->has('bmi')) ? 'has-error' : '' }} required">
-    {!! Form::label('bmi', 'BMI (10^-2 kg)', ['class' => 'col-md-2 control-label']) !!}
+    {!! Form::label('bmi', 'BMI (kgm^-2)', ['class' => 'col-md-2 control-label']) !!}
     <div class="col-md-10">
         {!! Form::text('bmi', null, ['class' => 'form-control', 'placeholder' => 'BMI(kgm-2)']) !!}
         <p class="help-block">{{ ($errors->has('bmi') ? $errors->first('bmi') : '') }}</p>
