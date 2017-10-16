@@ -709,7 +709,6 @@
                                 @endforeach
                             </td>
                             @endforeach
-                            </td>
                     </tr>
                     <tr>
                         <th>Reflexes</th>

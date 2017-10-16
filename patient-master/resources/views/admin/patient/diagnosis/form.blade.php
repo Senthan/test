@@ -181,7 +181,7 @@
                             <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 2)->where('col', 10)->where('value', 1)->where('type', 'root_examination')->first() ? 'active' : '' !!}"></td>
                             <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 2)->where('col', 11)->where('value', 1)->where('type', 'root_examination')->first() ? 'active' : '' !!}"></td>
                             <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 2)->where('col', 12)->where('value', 1)->where('type', 'root_examination')->first() ? 'active' : '' !!}"></td>
-                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 22)->where('col', 13)->where('value', 1)->where('type', 'root_examination')->first() ? 'active' : '' !!}"></td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 2)->where('col', 13)->where('value', 1)->where('type', 'root_examination')->first() ? 'active' : '' !!}"></td>
                         </tr>
 
                         <tr class="item1">
@@ -542,7 +542,7 @@
                     <table class="ui celled table pain-scale">
                         <thead>
                         <tr>
-                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 0)->where('col', 0)->where('value', 1)->where('type', 'pain_scale')->first() ? 'active' : '' !!}">1</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 0)->where('col', 0)->where('value', 1)->where('type', 'pain_scale')->first() ? 'active' : '' !!}">0</td>
                             <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 0)->where('col', 1)->where('value', 1)->where('type', 'pain_scale')->first() ? 'active' : '' !!}">1</td>
                             <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 0)->where('col', 2)->where('value', 1)->where('type', 'pain_scale')->first() ? 'active' : '' !!}">2</td>
                             <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 0)->where('col', 3)->where('value', 1)->where('type', 'pain_scale')->first() ? 'active' : '' !!}">3</td>
