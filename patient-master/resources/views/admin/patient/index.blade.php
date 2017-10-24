@@ -64,6 +64,7 @@
                 { displayName: 'Age', field: 'age', minWidth: 60, width: 60},
                 { displayName: 'Sex', field: 'sex', editableCellTemplate: 'ui-grid/dropdownEditor',
                     editDropdownOptionsArray: [{ id:'Male', ward: 'Male'}, {id:'Female', ward: 'Female'}, {id:'Other', ward: 'Other'}], editDropdownValueLabel: 'ward', minWidth: 80, width: 80},
+                { displayName: 'Address', field: 'address', minWidth: 200, width: 200},
                 { displayName: 'Presenting complain', field: 'diagnosis',
                     cellTemplate:'<div ng-repeat="(key, item) in row.entity.diagnosis track by $index">@{{item.presenting_complain}}</div>',minWidth: 190, width: 190, enableCellEdit: false},
                 { displayName: 'Motor examination', field: 'motor_examination', enableCellEdit: false, minWidth: 150, width: 150},
