@@ -275,7 +275,7 @@ class PatientController extends Controller
         $weight = floatval($request->weight);
         $height = floatval($request->height);
         $bmi = $weight && $height ? floatval($weight) * 100 *100 / ($height * $height) : '';
-        $diagnosis->bmi = $bmi;
+        $diagnosis->bmi = round($bmi, 2);
         $diagnosis->date = $request->date;
         $diagnosis->staff_id = $request->staff_id;
         $diagnosis->refferred_from = $request->refferred_from;
@@ -370,7 +370,7 @@ class PatientController extends Controller
         $weight = floatval($request->weight);
         $height = floatval($request->height);
         $bmi = $weight && $height ? floatval($weight) * 100 *100 / ($height * $height) : '';
-        $diagnosis->bmi = $bmi;
+        $diagnosis->bmi = round($bmi, 2);
         $diagnosis->date = $request->date;
         $diagnosis->staff_id = $request->staff_id;
         $diagnosis->refferred_from = $request->refferred_from;
