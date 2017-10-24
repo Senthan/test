@@ -55,7 +55,7 @@
 
                             <td> {!! $patient->diagnosis()->first() ? $patient->diagnosis()->first()->height .' cm' : '' !!}</td>
                             <td> {!! $patient->diagnosis()->first() ? $patient->diagnosis()->first()->weight . ' kg' : '' !!}</td>
-                            <td> {!! $patient->diagnosis()->first() ? $patient->diagnosis()->first()->bmi . ' x 10^-2 kg' : '' !!}</td>
+                            <td> {!! $patient->diagnosis()->first() ? $patient->diagnosis()->first()->bmi . ' kgm^-2' : '' !!}</td>
 
                            </tr>
                         </tbody>

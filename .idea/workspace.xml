@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e9ab64d2-a3cf-431d-9c1d-0a6f274e9cdc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/patient-master/resources/views/admin/patient/index.blade.php" afterPath="$PROJECT_DIR$/patient-master/resources/views/admin/patient/index.blade.php" />
-    </list>
+    <list default="true" id="e9ab64d2-a3cf-431d-9c1d-0a6f274e9cdc" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,8 +14,8 @@
       <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/patient-master/resources/views/admin/patient/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="65" column="193" lean-forward="false" selection-start-line="65" selection-start-column="193" selection-end-line="65" selection-end-column="193" />
+            <state relative-caret-position="190">
+              <caret line="66" column="85" lean-forward="false" selection-start-line="66" selection-start-column="85" selection-end-line="66" selection-end-column="85" />
               <folding />
             </state>
           </provider>
@@ -175,12 +172,12 @@
       <option name="presentableId" value="Default" />
       <updated>1507391567311</updated>
       <workItem from="1507391568785" duration="1104000" />
-      <workItem from="1508853438408" duration="1135000" />
+      <workItem from="1508853438408" duration="1670000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2239000" />
+    <option name="totallyTimeSpent" value="2774000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -242,8 +239,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/patient-master/resources/views/admin/patient/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="65" column="193" lean-forward="false" selection-start-line="65" selection-start-column="193" selection-end-line="65" selection-end-column="193" />
+        <state relative-caret-position="190">
+          <caret line="66" column="85" lean-forward="false" selection-start-line="66" selection-start-column="85" selection-end-line="66" selection-end-column="85" />
           <folding />
         </state>
       </provider>
