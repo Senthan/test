@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e9ab64d2-a3cf-431d-9c1d-0a6f274e9cdc" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/patient-master/resources/views/admin/layouts/master.blade.php" afterPath="$PROJECT_DIR$/patient-master/resources/views/admin/layouts/master.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,8 +39,8 @@
       <file leaf-file-name="master.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/patient-master/resources/views/admin/layouts/master.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="54" column="59" lean-forward="false" selection-start-line="54" selection-start-column="59" selection-end-line="54" selection-end-column="59" />
+            <state relative-caret-position="119">
+              <caret line="55" column="65" lean-forward="false" selection-start-line="55" selection-start-column="65" selection-end-line="55" selection-end-column="65" />
               <folding />
             </state>
           </provider>
@@ -245,12 +246,12 @@
       <workItem from="1507391568785" duration="1104000" />
       <workItem from="1508853438408" duration="1670000" />
       <workItem from="1508855277118" duration="120000" />
-      <workItem from="1511061420538" duration="1282000" />
+      <workItem from="1511061420538" duration="1753000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4176000" />
+    <option name="totallyTimeSpent" value="4647000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -381,8 +382,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/patient-master/resources/views/admin/layouts/master.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="54" column="59" lean-forward="false" selection-start-line="54" selection-start-column="59" selection-end-line="54" selection-end-column="59" />
+        <state relative-caret-position="119">
+          <caret line="55" column="65" lean-forward="false" selection-start-line="55" selection-start-column="65" selection-end-line="55" selection-end-column="65" />
           <folding />
         </state>
       </provider>

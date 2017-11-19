@@ -53,6 +53,7 @@
     <script src="{{ asset('components/ezdz/src/jquery.ezdz.js') }}"></script>
     <script src="{{ asset('components/csv-js/csv.js') }}"></script>
     <script src="{{ asset('components/pdfmake/build/pdfmake.js') }}"></script>
+    <script src="{{ asset('components/pdfmake/build/ vfs_fonts.js') }}"></script>
     <script>
         var dateTimePicker;
         var DatePicker;
