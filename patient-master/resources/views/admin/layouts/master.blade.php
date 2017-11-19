@@ -51,6 +51,8 @@
     <script src="{{ asset('components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('components\semantic\dist\semantic.js') }}"></script>
     <script src="{{ asset('components/ezdz/src/jquery.ezdz.js') }}"></script>
+    <script src="{{ asset('components/csv-js/csv.js') }}"></script>
+    <script src="{{ asset('components/pdfmake/build/pdfmake.js') }}"></script>
     <script>
         var dateTimePicker;
         var DatePicker;
