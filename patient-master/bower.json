@@ -53,6 +53,7 @@
     "semantic": "semantic-ui#^2.2.10",
     "pdfmake": "~0.1.8",
     "csv-js": "https://github.com/c0bra/CSV-JS.git#~1.0.2",
-    "excel-builder-js": "excelbuilder#^2.0.2"
+    "excel-builder-js": "excelbuilder#^2.0.2",
+    "angular-local-storage": "^0.7.1"
   }
 }

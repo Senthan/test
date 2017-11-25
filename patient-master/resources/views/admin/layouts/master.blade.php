@@ -54,17 +54,47 @@
     <script src="{{ asset('components/csv-js/csv.js') }}"></script>
     <script src="{{ asset('components/pdfmake/build/pdfmake.js') }}"></script>
     <script src="{{ asset('components/pdfmake/build/vfs_fonts.js') }}"></script>
+    <script src="{{ asset('components/angular-local-storage/dist/angular-local-storage.min.js') }}"></script>
+    <script src="{{ asset('components/fullcalendar/dist/fullcalendar.min.js') }}"></script>
+    <script src="{{ asset('components/fullcalendar-scheduler/dist/scheduler.min.js') }}"></script>
+
     <script>
         var dateTimePicker;
         var DatePicker;
         var TimePicker;
         var formSubmissionHandled = false;
+        function setCookie(cname, cvalue, hours) {
+            var d = new Date();
+            d.setTime(d.getTime() + (hours * 60 * 60 * 1000));
+            var expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + "; " + expires;
+        }
 
-        var app = angular.module('app', ['ngTouch', 'ui.grid', 'ui.grid.grouping', 'ui.grid.expandable', 'ui.grid.pinning', 'ui.grid.selection', 'ui.grid.pagination', 'ui.grid.resizeColumns', 'ui.grid.moveColumns', 'ui.grid.autoResize', 'ui.grid.edit', 'angularFileUpload', 'ui.grid.exporter', 'ui.grid.resizeColumns', 'ui.grid.moveColumns']);
+        function getCookie(cname) {
+            var name = cname + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        var app = angular.module('app', ['LocalStorageModule', 'ngTouch', 'ui.grid', 'ui.grid.grouping', 'ui.grid.expandable', 'ui.grid.pinning', 'ui.grid.selection', 'ui.grid.pagination', 'ui.grid.resizeColumns', 'ui.grid.moveColumns', 'ui.grid.autoResize', 'ui.grid.edit', 'angularFileUpload', 'ui.grid.exporter', 'ui.grid.resizeColumns', 'ui.grid.moveColumns']);
         app.run(['$http', function ($http) {
             $http.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
-            $http.defaults.cache = false;
-        }]);
+//            $http.defaults.cache = false;
+        }]).config(function ($httpProvider, localStorageServiceProvider) {
+            localStorageServiceProvider
+                .setPrefix('grid-demo')
+                .setStorageType('localStorage')
+                .setNotify(true, true); // Not sure what this setting does
+        });
 
         var gridOptions = {
             enableSorting: true,
