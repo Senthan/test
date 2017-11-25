@@ -67,8 +67,13 @@
                 { displayName: 'Sex', field: 'sex', editableCellTemplate: 'ui-grid/dropdownEditor',
                     editDropdownOptionsArray: [{ id:'Male', ward: 'Male'}, {id:'Female', ward: 'Female'}, {id:'Other', ward: 'Other'}], editDropdownValueLabel: 'ward', minWidth: 80, width: 80},
                 { displayName: 'Address', field: 'address', minWidth: 150, width: 150},
+                { displayName: 'Phone', field: 'phone', minWidth: 150, width: 150},
+                { displayName: 'Date of 1st visit', field: 'diagnosis',
+                    cellTemplate:'<div ng-repeat="(key, item) in row.entity.diagnosis track by $index">@{{item.date}}</div>',minWidth: 190, width: 190, enableCellEdit: false},
                 { displayName: 'Presenting complain', field: 'diagnosis',
-                    cellTemplate:'<div ng-repeat="(key, item) in row.entity.diagnosis track by $index">@{{item.presenting_complain}}</div>',minWidth: 190, width: 190, enableCellEdit: false},
+                                cellTemplate:'<div ng-repeat="(key, item) in row.entity.diagnosis track by $index">@{{item.presenting_complain}}</div>',minWidth: 190, width: 190, enableCellEdit: false},
+                { displayName: 'BMI', field: 'diagnosis',
+                    cellTemplate:'<div ng-repeat="(key, item) in row.entity.diagnosis track by $index">@{{item.bmi}}</div>',minWidth: 190, width: 190, enableCellEdit: false},
                 { displayName: 'Motor examination', field: 'motor_examination', enableCellEdit: false, minWidth: 150, width: 150},
                 { displayName: 'Sensory', field: 'sensory', enableCellEdit: false, minWidth: 150, width: 150},
                 { displayName: 'Activities of daily living', field: 'activities_of_daily_living', enableCellEdit: false, minWidth: 150, width: 150},
@@ -81,6 +86,10 @@
                     cellTemplate:'<div ng-repeat="(key, item) in row.entity.diagnosis track by $index">@{{item.miri_scan}}</div>',minWidth: 190, width: 190, enableCellEdit: false},
                 { displayName: 'Surgery', field: 'surgical',
                     cellTemplate:'<div ng-repeat="(key, item) in row.entity.surgical track by $index">@{{item.surgery}}</div>',minWidth: 190, width: 190, enableCellEdit: false},
+                { displayName: 'Date of surgery', field: 'surgical',
+                    cellTemplate:'<div ng-repeat="(key, item) in row.entity.surgical track by $index">@{{item.date_of_surgery}}</div>',minWidth: 190, width: 190, enableCellEdit: false},
+                { displayName: 'Date of next visit', field: 'surgicalFollowup',
+                    cellTemplate:'<div ng-repeat="(key, item) in row.entity.surgical track by $index">@{{item.date}}</div>',minWidth: 190, width: 190, enableCellEdit: false},
                 { displayName: 'Surgical Management', field: 'diagnosis',
                     cellTemplate:'<div ng-repeat="(key, item) in row.entity.diagnosis track by $index">@{{item.surgical_management}}</div>',minWidth: 190, width: 190, enableCellEdit: false},
                  { displayName: 'Non Surgical Management', field: 'diagnosis',
@@ -156,6 +165,21 @@
                 if ( col.displayName === 'Drugs given' ) {
                     if(_.isArray(value)) {
                         text = (_.pluck(value, 'drugs_given')).toString();
+                    }
+                }
+                if ( col.displayName === 'BMI' ) {
+                    if(_.isArray(value)) {
+                        text = (_.pluck(value, 'bmi')).toString();
+                    }
+                }
+                if ( col.displayName === 'Date of surgery' ) {
+                    if(_.isArray(value)) {
+                        text = (_.pluck(value, 'date_of_surgery')).toString();
+                    }
+                }
+                if ( col.displayName === 'Date of 1st visit' ) {
+                    if(_.isArray(value)) {
+                        text = (_.pluck(value, 'date')).toString();
                     }
                 }
                 return text;

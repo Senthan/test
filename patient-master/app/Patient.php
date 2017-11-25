@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Patient extends Model
 {
-    protected $fillable = ['patient_uuid', 'serial_no', 'name', 'age', 'sex', 'ward', 'B_H_T', 'description', 'status', 'operation_theater', 'admission_type', 'date', 'address'];
+    protected $fillable = ['patient_uuid', 'serial_no', 'name', 'age', 'sex', 'ward', 'B_H_T', 'description', 'status', 'operation_theater', 'admission_type', 'date', 'address', 'phone'];
 
     public function surgeryType()
     {

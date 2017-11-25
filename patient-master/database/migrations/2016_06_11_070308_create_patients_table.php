@@ -29,6 +29,7 @@ class CreatePatientsTable extends Migration
             $table->enum('diagnosis',['Active', 'Inactive'])->nullable()->default('Inactive'); // review is not verified
             $table->text('description');
             $table->text('address')->nullable();
+            $table->string('phone')->nullable();
             $table->integer('anaesthetic_id');
             $table->integer('examination_id');
             $table->integer('profile_id');
