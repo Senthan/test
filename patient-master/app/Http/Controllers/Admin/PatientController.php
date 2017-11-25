@@ -11,6 +11,7 @@ use App\Examination;
 use App\FollowUpPlan;
 use App\InvestigationBioChemistry;
 use App\InvestigationBloodTest;
+use Maatwebsite\Excel\Facades\Excel;
 use App\InvestigationCtScan;
 use App\InvestigationCxr;
 use App\InvestigationHematology;
@@ -570,5 +571,54 @@ class PatientController extends Controller
         $patient->save();
 
     }
+
+    public function dailyReportExport()
+    {
+        $response =  array();
+        $selectedAllFollowups = request()->selectedData;
+        if($selectedAllFollowups && count($selectedAllFollowups)) {
+            $datum = [];
+            foreach ($selectedAllFollowups as $selectedAllFollowup) {
+                $datum[] = [
+                    'Id' => isset($selectedAllFollowup[0]) ? $selectedAllFollowup[0] : '',
+                    'Account Number' => isset($selectedAllFollowup[1]) ? $selectedAllFollowup[1] : '',
+                    'Invoice Number' => isset($selectedAllFollowup[2]) ? str_replace(" ", "", str_replace("<br>", ", ", $selectedAllFollowup[2])) : '',
+                    'Reference Id' => isset($selectedAllFollowup[3]) ? str_replace(" ", "", str_replace("<br>", ", ", $selectedAllFollowup[3])) : '',
+                    'Name' => isset($selectedAllFollowup[4]) ? $selectedAllFollowup[4] : '',
+                    'IC' => isset($selectedAllFollowup[5]) ? $selectedAllFollowup[5] : '',
+                    'Remarks' => isset($selectedAllFollowup[6]) ? $selectedAllFollowup[6] : '',
+                    'Date and Time' => isset($selectedAllFollowup[7]) ? $selectedAllFollowup[7] : '',
+                    'Debt Amount' => isset($selectedAllFollowup[8]) ? str_replace(" ", "", str_replace("<br>", ", ", $selectedAllFollowup[8])) : '',
+                    'Outstanding' => isset($selectedAllFollowup[9]) ? str_replace(" ", "", str_replace("<br>", ", ", $selectedAllFollowup[9])) : '',
+                    'PTP Date' => isset($selectedAllFollowup[10]) ? $selectedAllFollowup[10] : '',
+                    'PTP Amount' => isset($selectedAllFollowup[11]) ? $selectedAllFollowup[11] : '',
+                    'Collector' => isset($selectedAllFollowup[12]) ? $selectedAllFollowup[12] : '',
+                    'Group' => isset($selectedAllFollowup[13]) ? $selectedAllFollowup[13] : '',
+                    'Status' => isset($selectedAllFollowup[14]) ? $selectedAllFollowup[14] : '',
+                    'Event' => isset($selectedAllFollowup[15]) ? $selectedAllFollowup[15] : '',
+                    'Created At' => isset($selectedAllFollowup[16]) ? $selectedAllFollowup[16] : '',
+                ];
+            }
+            $myFile= Excel::create('iCollect Daily Report', function($excel) use($datum) {
+                if(count($datum)) {
+                    $excel->sheet('iCollect Daily Report', function($sheet) use ($datum) {
+                        $sheet->fromArray($datum);
+                        $sheet->setOrientation('landscape');
+                    });
+                }
+
+            });
+
+            $myFile = $myFile->string('xls'); //change xlsx for the format you want, default is xls
+            $response =  array(
+                'name' => "iCollectDailyReport.xls", //no extention needed
+                'file' => "data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,".base64_encode($myFile) //mime type of used format
+            );
+
+
+        }
+        return response()->json($response);
+    }
+
 
 }

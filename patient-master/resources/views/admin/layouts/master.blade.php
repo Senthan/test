@@ -58,6 +58,9 @@
     <script src="{{ asset('components/fullcalendar/dist/fullcalendar.min.js') }}"></script>
     <script src="{{ asset('components/fullcalendar-scheduler/dist/scheduler.min.js') }}"></script>
 
+    <!-- underscorejs -->
+    <script src="{{ asset('components/underscore/underscore.js') }}"></script>
+
     <script>
         var dateTimePicker;
         var DatePicker;

@@ -58,8 +58,6 @@
         });
 
         app.controller('PatientController', ['$scope', '$http', '$timeout', 'localStorageService', 'uiGridConstants', function ($scope, $http, $timeout, $localStorageService, uiGridConstants) {
-
-//            app.controller('PatientController', ['$scope', '$http', '$log', function ($scope, $http, $log) {
             $scope.moduleUrl = "{{ route('patient.index') }}/"
 
             var columnDefs = [
@@ -91,15 +89,6 @@
                     cellTemplate:'<div ng-repeat="(key, item) in row.entity.diagnosis track by $index">@{{item.drugs_given}}</div>',minWidth: 190, width: 190, enableCellEdit: false}
             ];
 
-//            gridOptions.enableRowSelection = true;
-//            gridOptions.expandableRowTemplate = 'expandableRowTemplate.html';
-//            gridOptions.expandableRowHeight = 150;
-//            gridOptions.columnDefs = columnDefs;
-//            gridOptions.enableGridMenu = true;
-//            gridOptions.enableColumnResizing = true;
-//            gridOptions.enableSelectAll = true;
-//            gridOptions.exporterMenuCsv = true;
-
             gridOptions.multiSelect = true;
             gridOptions.enableRowSelection = true;
             gridOptions.expandableRowTemplate = 'expandableRowTemplate.html';
@@ -116,7 +105,69 @@
 
             gridOptions.showGridFooter = true;
 
-            gridOptions.onRegisterApi = function (gridApi) {
+
+            gridOptions.exporterOlderExcelCompatibility = true;
+            gridOptions.exporterCsvFilename = 'PatientDetails.csv';
+            gridOptions.exporterPdfDefaultStyle = {fontSize: 9};
+            gridOptions.exporterPdfTableStyle = {margin: [30, 30, 30, 30]};
+            gridOptions.exporterPdfTableHeaderStyle = {fontSize: 10, bold: true, italics: true, color: 'blue'};
+            gridOptions.exporterPdfHeader = { text: '', style: 'headerStyle' };
+            gridOptions.exporterPdfFooter = function ( currentPage, pageCount ) {
+                return { text: currentPage.toString() + ' of ' + pageCount.toString(), style: 'footerStyle' };
+            };
+            gridOptions.exporterPdfCustomFormatter = function ( docDefinition ) {
+                docDefinition.styles.headerStyle = { fontSize: 22, bold: true };
+                docDefinition.styles.footerStyle = { fontSize: 10, bold: true };
+                return docDefinition;
+            };
+            gridOptions.exporterFieldCallback = function ( grid, row, col, value ) {
+                console.log(' grid, row, col, value',  col.field,  col.displayName, value);
+                var text = value;
+                if ( col.displayName === 'Presenting complain' ) {
+                    if(_.isArray(value)) {
+                        text = (_.pluck(value, 'presenting_complain')).toString();
+                    }
+                }
+                if ( col.displayName === 'CT Scan' ) {
+                    if(_.isArray(value)) {
+                        text = (_.pluck(value, 'ct_scan')).toString();
+                    }
+                }
+                if ( col.displayName === 'Xary' ) {
+                    if(_.isArray(value)) {
+                        text = (_.pluck(value, 'x_ray')).toString();
+                    }
+                }
+                if ( col.displayName === 'MRI' ) {
+                    if(_.isArray(value)) {
+                        text = (_.pluck(value, 'miri_scan')).toString();
+                    }
+                }
+                if ( col.displayName === 'Surgical Management' ) {
+                    if(_.isArray(value)) {
+                        text = (_.pluck(value, 'surgery')).toString();
+                    }
+                }
+                if ( col.displayName === 'Non Surgical Management' ) {
+                    if(_.isArray(value)) {
+                        text = (_.pluck(value, 'non_surgical_management')).toString();
+                    }
+                }
+                if ( col.displayName === 'Drugs given' ) {
+                    if(_.isArray(value)) {
+                        text = (_.pluck(value, 'drugs_given')).toString();
+                    }
+                }
+                return text;
+            };
+
+            gridOptions.exporterPdfOrientation = 'landscape',
+                gridOptions.exporterPdfPageSize = 'LETTER',
+                gridOptions.exporterPdfMaxGridWidth = 600,
+                gridOptions.exporterCsvLinkElement = angular.element(document.querySelectorAll('.custom-csv-link-location')),
+
+
+                gridOptions.onRegisterApi = function (gridApi) {
                 $scope.gridApi = gridApi;
                 gridApi.selection.on.rowSelectionChanged($scope, function (rows) {
                     $scope.setSelection(gridApi);
