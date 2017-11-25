@@ -44,7 +44,6 @@
         <div>
             <div data-ui-grid="gridOptions" ui-grid-exporter ui-grid-resize-columns ui-grid-move-columns ui-grid-save-state
                  data-ui-grid-infinite-scroll data-ui-grid-selection ui-grid-expandable ui-grid-grouping ui-grid-pagination ui-grid-edit class="grid"></div>
-            {{--<div ui-grid="gridOptions" ui-grid-expandable ui-grid-grouping ui-grid-exporter ui-grid-pagination ui-grid-selection ui-grid-edit ui-grid-resize-columns ui-grid-move-columns  class="grid"></div>--}}
         </div>
 
     </div>
@@ -130,7 +129,6 @@
                 return docDefinition;
             };
             gridOptions.exporterFieldCallback = function ( grid, row, col, value ) {
-                console.log(' grid, row, col, value',  col.field,  col.displayName, value);
                 var text = value;
                 if ( col.displayName === 'Presenting complain' ) {
                     if(_.isArray(value)) {
