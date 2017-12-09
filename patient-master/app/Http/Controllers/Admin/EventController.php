@@ -96,12 +96,33 @@ class EventController extends Controller
         return redirect()->route('event.index');
     }
 
+
+    public function show(Event $event)
+    {
+        $meeting = null;
+        $staff = null;
+        $eventType = EventType::where('name', 'like', '%Interview%')->first();
+        $eventTypeId = $eventType ? $eventType->id : null;
+        if(isset($eventTypeId) && $event->event_type_id == $eventTypeId){
+            $interview = $event->interview;
+            $event->name = ($interview) ?  $interview->name : '';
+            $event->email = ($interview) ?  $interview->email : '';
+            $event->stream = ($interview) ?  $interview->stream : '';
+        }
+        $event->start = $event->start ? $event->start->timezone(config('app.timezone')) : '';
+        $event->end = $event->end ? $event->end->timezone(config('app.timezone')) : '';
+
+        return view('aDMIN.event.show', compact('event', 'staff', 'meeting'));
+    }
+
+
+
     public function edit(Event $event)
     {
-        $event->start = $event->start->timezone(config('app.timezone'));
-        $event->end = $event->end->timezone(config('app.timezone'));
-        $start = null;
-        $end = null;
+        $event->start =  carbon()->parse($event->start)->tz(config('app.timezone'));
+        $event->end = carbon()->parse($event->end)->tz(config('app.timezone'));
+        $start = $event->start;
+        $end = $event->end;
         $event->staff = $event->staff()->get()->lists('short_name', 'id');
         $staffIds = implode(",", $event->staff()->get()->pluck('id')->toArray());
         $eventTypes = EventType::lists('name', 'id');

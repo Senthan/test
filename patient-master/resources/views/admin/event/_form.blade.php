@@ -29,7 +29,7 @@
 {{ form()->bsSelect('repeat', null, ['No' => 'No', 'Daily' => 'Daily', 'Weekly' => 'Weekly', 'Monthly' => 'Monthly', 'Yearly' => 'Yearly']) }}
 {{ form()->bsText('repeat_every') }}
 {{ form()->bsText('repeat_end', null, null, ['class' => 'form-control date-picker']) }}
-{{ form()->suCombo('where', null, null) }}
+{{ form()->bsText('where', null, null) }}
 {{ form()->bsTextarea('description') }}
 {{ form()->bsSelect('visibility', null, ['Public' => 'Public', 'Participants' => 'Participants Only']) }}
 
@@ -49,7 +49,6 @@
             var inStart = $('#start');
             var inEnd = $('#end');
             var inDescription = $('#description');
-            var inWhere = $('#where');
             var ddStaff = inStaff.dropdown('setting', {
                 apiSettings: {
                     url: '{{ route('staff.search') }}/{query}'
@@ -69,7 +68,6 @@
 
                 repeatUI(inRepeat.val(), true);
                 eventTypeUI(inEventType.val(), true);
-                whereUI(inWhere.val(), true);
             }
             resetUI();
 
@@ -116,11 +114,11 @@
                     dateTimePicker.data("DateTimePicker").format('YYYY-MM-DD H:mm:ss');
                 }
                 // Public holidays
-                if(eventType == 5) {
-                    inStaff.parents('.form-group').hide();
-                    inAllDay.parents('.form-group').hide();
-                    inEnd.parents('.form-group').hide();
-                }
+//                if(eventType == 5) {
+//                    inStaff.parents('.form-group').hide();
+//                    inAllDay.parents('.form-group').hide();
+//                    inEnd.parents('.form-group').hide();
+//                }
             }
 
 
@@ -156,27 +154,10 @@
             inRepeat.change(function () {
                 repeatUI($(this).val());
             });
-            inWhere.change(function () {
-                whereUI($(this).val());
-            });
 
             $('.ui.checkbox').checkbox();
 
-            var ddWhere = $('#ui_combo_where')
-                .dropdown('setting', {
-                    apiSettings: {
-                        url: '{{ route('meeting.search') }}/{query}'
-                    },
-                    onComplete: function() {
-                        $('#ui_combo_where').dropdown({allowAdditions: true});
-                    }
-                })
-            ;
 
-            @if(isset($event))
-                ddWhere.dropdown('set text', '{{ ($event->where) }}');
-                ddWhere.dropdown('set value', '{{ $event->where }}');
-            @endif
         });
     </script>
 @endsection

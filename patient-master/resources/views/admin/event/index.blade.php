@@ -88,7 +88,7 @@
                     window.location = "{{ route('event.create') }}?start=" + start + '&end=' + end;
                 },
                 eventClick: function(calEvent) {
-                    window.location = "{{ route('event.index') }}/" + calEvent.id + '/edit'
+                    window.location = "{{ route('event.index') }}/" + calEvent.id;
                 },
                 editable: true,
                 eventLimit: true,
