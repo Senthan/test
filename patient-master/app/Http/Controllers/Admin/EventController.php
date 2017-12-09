@@ -112,7 +112,7 @@ class EventController extends Controller
         $event->start = $event->start ? $event->start->timezone(config('app.timezone')) : '';
         $event->end = $event->end ? $event->end->timezone(config('app.timezone')) : '';
 
-        return view('aDMIN.event.show', compact('event', 'staff', 'meeting'));
+        return view('admin.event.show', compact('event', 'staff', 'meeting'));
     }
 
 
