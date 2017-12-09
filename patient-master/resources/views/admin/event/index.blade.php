@@ -71,11 +71,19 @@
 
 
             calendar.fullCalendar({
+                customButtons: {
+                    addEvent: {
+                        text: 'Add Event',
+                        click: function() {
+                            window.location = "{{ route('event.create') }}"
+                        }
+                    }
+                },
                 schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
                 header: {
-                    left: 'prevYear,prev,next,nextYear today',
+                    left: 'prevYear,prev,next,nextYear today timelineYear,month,agendaWeek,agendaDay',
                     center: 'title',
-                    right: 'timelineYear,month,agendaWeek,agendaDay'
+                    right: 'addEvent'
                 },
                 views: {
                     timelineYear: {
