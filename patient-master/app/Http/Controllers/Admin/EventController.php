@@ -162,6 +162,18 @@ class EventController extends Controller
     }
 
 
+    public function delete(Event $event)
+    {
+        return view('admin.event.delete', compact('event'));
+    }
+
+    public function destroy(Request $request, Event $event)
+    {
+        $event->staff()->detach();
+        $event->delete();
+        return redirect()->route('event.index');
+    }
+
     public function searchMeetings($q = null)
     {
         $places = [
