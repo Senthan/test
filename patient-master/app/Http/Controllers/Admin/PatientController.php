@@ -621,4 +621,17 @@ class PatientController extends Controller
     }
 
 
+    public function search($q = null)
+    {
+        if($q == null) {
+            $staff = Patient::get(['id', 'patient_uuid'])->toArray();
+        } else {
+            $staff = Patient::where('name', 'LIKE', '%' . $q . '%')->orWhere('patient_uuid', 'LIKE', '%' . $q . '%')->get(['id', 'patient_uuid'])->toArray();
+        }
+        $staff = array_map(function ($obj) {
+            return ["name" => $obj['patient_uuid'], "value" => $obj['id']];
+        }, $staff);
+        return response()->json([ "success" => true, "results" => $staff]);
+    }
+
 }

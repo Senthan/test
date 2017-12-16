@@ -151,6 +151,7 @@ $router->group(['middleware' => 'admin', 'namespace' => 'Admin', 'prefix' => '']
             $router->delete('{staff}', ['uses' => 'StaffController@destroy', 'as' => 'staff.destroy']);
             $router->get('{staff}', ['uses' => 'StaffController@show', 'as' => 'staff.show']);
             $router->get('search/{q?}', ['uses' => 'StaffController@search', 'as' => 'staff.search']);
+            $router->get('patient/search/{q?}', ['uses' => 'PatientController@search', 'as' => 'patient.search']);
         });
 
 

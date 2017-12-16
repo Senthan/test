@@ -21,6 +21,23 @@
 </div>
 
 
+<div class="form-group ">
+    <label for="patient[]" class="col-sm-2 control-label">Patients</label>
+    <div class="col-sm-10">
+        <div class="ui fluid search selection dropdown multiple" id="ui_combo_patient">
+            <input name="patient[]" type="hidden" value="{{ $patientIds  }}" id="patient[]">
+            <i class="dropdown icon"></i>
+            @if(isset($event))
+                @foreach($event->patient as $key => $patient)
+                    <a class="ui label transition visible" data-value="{{ $key }}" style="display: inline-block !important;">{{ $patient }}<i class="delete icon"></i></a>
+                @endforeach
+            @endif
+            <div class="default text"></div>
+        </div>
+    </div>
+</div>
+
+
 
 {{ form()->suCheckbox('all_day', null, 'Yes') }}
 {{ form()->bsText('start', null, $start, ['class' => 'form-control date-time-picker']) }}
@@ -45,6 +62,7 @@
             var inRepeat = $('#repeat');
             var inWhat = $('#what');
             var inStaff = $('#ui_combo_staff');
+            var inPatient = $('#ui_combo_patient');
             var inAllDay = $('#all_day');
             var inStart = $('#start');
             var inEnd = $('#end');
@@ -54,8 +72,13 @@
                     url: '{{ route('staff.search') }}/{query}'
                 }
             });
+            var ddPatient = inPatient.dropdown('setting', {
+                apiSettings: {
+                    url: '{{ route('patient.search') }}/{query}'
+                }
+            });
 
-            console.log('ddStaff', ddStaff);
+
             function resetUI() {
                 inDescription.parents('.form-group').hide();
                 inWhat.parents('.form-group').show();

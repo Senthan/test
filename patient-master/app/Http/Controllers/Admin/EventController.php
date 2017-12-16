@@ -49,7 +49,8 @@ class EventController extends Controller
         }
         $eventTypes = EventType::lists('name', 'id');
         $staffIds = collect([]);
-        return view('admin.event.create', compact('eventTypes', 'start', 'end', 'staffIds'));
+        $patientIds = collect([]);
+        return view('admin.event.create', compact('patientIds', 'eventTypes', 'start', 'end', 'staffIds'));
     }
 
     public function store(EventStoreRequest $request)
@@ -79,6 +80,18 @@ class EventController extends Controller
                 if($request->input('event_type_id') == 3) {
                     $staff = $event->staff()->first();
                     $event->what = $staff->short_name . ' BD';
+                    $event->save();
+                }
+            }
+        }
+
+        if(count($request->input('patient'))) {
+            $patientIDs = array_values(array_filter(explode(',', trim($request->input('patient')[0], ' []'))));
+            if(count($patientIDs)) {
+                $event->patient()->attach($patientIDs);
+                if($request->input('event_type_id') == 3) {
+                    $staff = $event->patient()->first();
+                    $event->what = $staff->patient_uuid . ' BD';
                     $event->save();
                 }
             }
@@ -125,8 +138,9 @@ class EventController extends Controller
         $end = $event->end;
         $event->staff = $event->staff()->get()->lists('short_name', 'id');
         $staffIds = implode(",", $event->staff()->get()->pluck('id')->toArray());
+        $patientIds = implode(",", $event->patient()->get()->pluck('id')->toArray());
         $eventTypes = EventType::lists('name', 'id');
-        return view('admin.event.edit', compact('event', 'eventTypes', 'start', 'end', 'staffIds'));
+        return view('admin.event.edit', compact('patientIds', 'event', 'eventTypes', 'start', 'end', 'staffIds'));
     }
 
     public function update(EventUpdateRequest $request, Event $event)
@@ -170,6 +184,7 @@ class EventController extends Controller
     public function destroy(Request $request, Event $event)
     {
         $event->staff()->detach();
+        $event->patient()->detach();
         $event->delete();
         return redirect()->route('event.index');
     }

@@ -18,6 +18,10 @@ class Event extends Model
     {
         return $this->belongsToMany(Staff::class)->withPivot(['is_owner']);
     }
+    public function patient()
+    {
+        return $this->belongsToMany(Patient::class)->withPivot(['is_owner']);
+    }
 
     public function isOwner(Staff $staff)
     {
