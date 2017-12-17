@@ -14,9 +14,7 @@ class CreateEventStaffPivotTable extends Migration
     {
         Schema::create('event_staff', function (Blueprint $table) {
             $table->unsignedInteger('event_id')->index();
-            $table->foreign('event_id')->references('id')->on('events')->onDelete('cascade');
             $table->unsignedInteger('staff_id')->index();
-            $table->foreign('staff_id')->references('id')->on('staff')->onDelete('cascade');
             $table->enum('is_owner', ['Yes', 'No'])->nullable();
             $table->string('value')->nullable();
         });

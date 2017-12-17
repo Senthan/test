@@ -25,7 +25,6 @@ class CreateEventsTable extends Migration
             $table->string('related_url')->nullable();
             $table->text('description')->nullable();
             $table->unsignedInteger('event_type_id')->index();
-            $table->foreign('event_type_id')->references('id')->on('event_types')->onDelete('cascade');
             $table->enum('visibility', ['Public', 'Participants'])->default('Public');
             $table->string('timezone')->nullable();
             $table->timestamps();
