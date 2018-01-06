@@ -63,6 +63,38 @@
                     <td>{{ $event->description }}</td>
                 </tr>
             </table>
+
+            <div class="ui {{ $event->eventType->class }} segment">
+                <table class="table table-bordered">
+                    <tr>
+                        <th>Staff</th>
+                        <td>{{ $event->staff()->first()->short_name }}</td>
+                    </tr>
+                </table>
+                @if($event->patient)
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th>Patients</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr>
+                                <td>
+                                    @foreach($event->patient as $tz => $patient)
+                                    <a href="{{ route('patient.show', ['patient' => $patient]) }}"> {{ $patient->patient_uuid}} </a>
+                                        <span>, </span>
+                                    @endforeach
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                @endif
+            </div>
+
+
         </div>
     </div>
 @endsection

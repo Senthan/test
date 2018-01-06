@@ -137,6 +137,7 @@ class EventController extends Controller
         $start = $event->start;
         $end = $event->end;
         $event->staff = $event->staff()->get()->lists('short_name', 'id');
+        $event->patient = $event->patient()->get()->lists('patient_uuid', 'id');
         $staffIds = implode(",", $event->staff()->get()->pluck('id')->toArray());
         $patientIds = implode(",", $event->patient()->get()->pluck('id')->toArray());
         $eventTypes = EventType::lists('name', 'id');
@@ -163,6 +164,13 @@ class EventController extends Controller
             }
         }
 
+        if(count($request->input('patient'))) {
+            $patientIDs = array_values(array_filter(explode(',', trim($request->input('patient')[0], ' []'))));
+            if(count($patientIDs)) {
+                $event->patient()->detach();
+                $event->patient()->attach($patientIDs);
+            }
+        }
         $users = (isset($event) && $event->visibility == 'Participants') ? $event->staff()->with('user')->get()->pluck('user')->pluck('id') : null;
         if($event && $event->visibility != 'Participants'){
             event(new EventNotification());
