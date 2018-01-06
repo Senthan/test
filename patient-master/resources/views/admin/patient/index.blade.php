@@ -88,10 +88,7 @@
                 { displayName: 'Date of surgery', field: 'surgical',
                     cellTemplate:'<div ng-repeat="(key, item) in row.entity.surgical track by $index">@{{item.date_of_surgery}}</div>',minWidth: 190, width: 190, enableCellEdit: false},
                 { displayName: 'Date of next visit', field: 'surgicalFollowup',
-                    cellTemplate:'<div ng-repeat="(key, item) in row.entity.surgical_followup track by $index">@{{item.date}}</div>',minWidth: 190, width: 190, enableCellEdit: false},
-
-                { displayName: 'Date of next visit', field: 'surgicalFollowup[row.entity.surgical_followup - 1].date', minWidth: 190, width: 190, enableCellEdit: false},
-
+                    cellTemplate:'<div>@{{row.entity.surgical_followup[row.entity.surgical_followup.length-1].date}}</div>',minWidth: 190, width: 190, enableCellEdit: false},
                 { displayName: 'Surgical Management', field: 'diagnosis',
                     cellTemplate:'<div ng-repeat="(key, item) in row.entity.diagnosis track by $index">@{{item.surgical_management}}</div>',minWidth: 190, width: 190, enableCellEdit: false},
                  { displayName: 'Non Surgical Management', field: 'diagnosis',
