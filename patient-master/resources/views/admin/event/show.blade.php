@@ -68,7 +68,7 @@
                 <table class="table table-bordered">
                     <tr>
                         <th>Staff</th>
-                        <td>{{ $event->staff()->first()->short_name }}</td>
+                        <td>{{ $event->staff()->first()->short_name or '' }}</td>
                     </tr>
                 </table>
                 @if($event->patient)

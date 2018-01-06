@@ -156,18 +156,17 @@ class EventController extends Controller
             $request->merge(['repeat_every' => null]);
         }
         $event->update($request->only(['event_type_id', 'what', 'all_day', 'start', 'end', 'repeat', 'repeat_every', 'repeat_end', 'where', 'visibility']));
+        $event->staff()->detach();
         if(count($request->input('staff'))) {
             $staffIDs = array_values(array_filter(explode(',', trim($request->input('staff')[0], ' []'))));
             if(count($staffIDs)) {
-                $event->staff()->detach();
                 $event->staff()->attach($staffIDs);
             }
         }
-
+        $event->patient()->detach();
         if(count($request->input('patient'))) {
             $patientIDs = array_values(array_filter(explode(',', trim($request->input('patient')[0], ' []'))));
             if(count($patientIDs)) {
-                $event->patient()->detach();
                 $event->patient()->attach($patientIDs);
             }
         }
