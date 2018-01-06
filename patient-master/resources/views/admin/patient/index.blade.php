@@ -89,6 +89,9 @@
                     cellTemplate:'<div ng-repeat="(key, item) in row.entity.surgical track by $index">@{{item.date_of_surgery}}</div>',minWidth: 190, width: 190, enableCellEdit: false},
                 { displayName: 'Date of next visit', field: 'surgicalFollowup',
                     cellTemplate:'<div ng-repeat="(key, item) in row.entity.surgical_followup track by $index">@{{item.date}}</div>',minWidth: 190, width: 190, enableCellEdit: false},
+
+                { displayName: 'Date of next visit', field: 'surgicalFollowup[row.entity.surgical_followup - 1].date', minWidth: 190, width: 190, enableCellEdit: false},
+
                 { displayName: 'Surgical Management', field: 'diagnosis',
                     cellTemplate:'<div ng-repeat="(key, item) in row.entity.diagnosis track by $index">@{{item.surgical_management}}</div>',minWidth: 190, width: 190, enableCellEdit: false},
                  { displayName: 'Non Surgical Management', field: 'diagnosis',
@@ -112,6 +115,8 @@
             gridOptions.enableRowHeaderSelection = false;
 
             gridOptions.showGridFooter = true;
+
+            gridOptions.rowTemplate = "<div ng-dblclick=\"grid.appScope.rowDblClick(row)\" ng-repeat=\"(colRenderIndex, col) in colContainer.renderedColumns track by col.colDef.name\" class=\"ui-grid-cell\" ng-class=\"{ 'ui-grid-row-header-cell': col.isRowHeader }\" ui-grid-cell></div>"
 
 
             gridOptions.exporterOlderExcelCompatibility = true;
@@ -229,6 +234,11 @@
                 restoreState();
             }
 
+            $scope.rowDblClick = function( row) {
+                var patientUrl = "{{ route('patient.show', ['__PATIENT__']) }}";
+                patientUrl = patientUrl.replace('__PATIENT__', row.entity.id);
+                window.location.href = patientUrl;
+            };
 
             function saveState() {
                 var state = $scope.gridApi.saveState.save();
