@@ -16,4 +16,9 @@ class SurgicalFollowup extends Model
     {
         return $this->hasMany(Examination::class);
     }
+
+    public function patient()
+    {
+        return $this->belongsTo(Patient::class);
+    }
 }

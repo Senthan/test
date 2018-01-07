@@ -18,6 +18,11 @@ class Patient extends Model
         return $this->belongsToMany(Diagnosis::class, 'patient_surgery_type', 'patient_id', 'diagnosis_id');
     }
 
+    public function patient_diagnosis()
+    {
+        return $this->belongsToMany(Diagnosis::class, 'patient_surgery_type', 'patient_id', 'diagnosis_id');
+    }
+
     public function examination()
     {
         return $this->hasOne(Examination::class);
