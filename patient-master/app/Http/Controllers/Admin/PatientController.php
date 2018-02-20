@@ -121,7 +121,7 @@ class PatientController extends Controller
 
         if (request()->ajax()) {
             $patient = Patient::with('diagnosis', 'examinations', 'surgicalFollowup',
-                'nonSurgicalFollowup', 'surgical')->get()->sortByDesc('created_at')->values();
+                'nonSurgicalFollowup', 'surgical')->get()->sortBy('created_at')->values();
             return response()->json($patient);
         }
 

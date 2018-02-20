@@ -57,10 +57,29 @@
         });
 
         app.controller('PatientController', ['$scope', '$http', '$timeout', 'localStorageService', 'uiGridConstants', function ($scope, $http, $timeout, $localStorageService, uiGridConstants) {
-            $scope.moduleUrl = "{{ route('patient.index') }}/"
+            $scope.moduleUrl = "{{ route('patient.index') }}/";
 
+//        var myAwesomeSortFn = function(a,b) {
+
+            var NUMBER_GROUPS = /(-?\d*\.?\d+)/g;
+
+            var myAwesomeSortFn = function (a, b) {
+
+                var aa = String(a).split(NUMBER_GROUPS),
+                    bb = String(b).split(NUMBER_GROUPS),
+                    min = Math.min(aa.length, bb.length);
+
+                for (var i = 0; i < min; i++) {
+                    var x = parseFloat(aa[i]) || aa[i].toLowerCase(),
+                        y = parseFloat(bb[i]) || bb[i].toLowerCase();
+                    if (x < y) return -1;
+                    else if (x > y) return 1;
+                }
+
+                return 0;
+            };
             var columnDefs = [
-                { displayName: 'OSC No', field: 'patient_uuid', enableCellEdit: false, minWidth: 100, width: 130, pinnedLeft:true},
+                { displayName: 'OSC No', field: 'patient_uuid', enableCellEdit: false, minWidth: 100, width: 130, pinnedLeft:true, sortFn: myAwesomeSortFn},
                 { displayName: 'Name', field: 'name', minWidth: 150, width: 150},
                 { displayName: 'Age', field: 'age', minWidth: 60, width: 60},
                 { displayName: 'Sex', field: 'sex', editableCellTemplate: 'ui-grid/dropdownEditor',
