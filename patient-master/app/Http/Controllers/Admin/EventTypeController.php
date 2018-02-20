@@ -55,4 +55,14 @@ class EventTypeController extends Controller
         $eventType->update($inputs);
         return redirect()->route('event.index');
     }
+    public function delete(EventType $eventType)
+    {
+        return view('admin.event.type.delete', compact('eventType'));
+    }
+
+    public function destroy(Request $request, EventType $eventType)
+    {
+        $eventType->delete();
+        return redirect()->route('event.index');
+    }
 }

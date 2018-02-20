@@ -101,39 +101,39 @@ class SurgicalFollowupController extends Controller
         $surgicalFollowup->save();
 
         $this->updatePatientFollowup($surgicalFollowup);
-
-        $diagnosis = $patient->patient_diagnosis->first();
-        $refferred_from = $diagnosis->refferred_from ? $diagnosis->refferred_from : 'Surgical Followup';
-        $refferredFrom = '%'.$refferred_from.'%';
-        $eventType = EventType::where('name', 'like', $refferredFrom)->first();
-        if(!$eventType) {
-            $eventType = EventType::firstOrNew(['name' => $refferred_from]);
-            $eventType->save();
-        }
-        if($eventType) {
-            $event = Event::firstOrNew([
-                'event_type_id' => $eventType->id,
-                'all_day' => 'No',
-                'start' => $request->date,
-                'end' => $request->date,
-                'repeat' => 'No',
-                'repeat_every' => null,
-                'repeat_end' => null,
-                'where' => null,
-                'visibility' => 'Public'
-            ]);
-
-            $event->save();
-            $what = $event->what;
-            $what = $what && $what != '' ? $what :  $refferred_from. ' for ';
-            $what = $what. ' ' .$patient->patient_uuid;
-            $event->what = $what;
-            $event->save();
-            $fPatient = $event->patient()->find($patient->id);
-            if(!$fPatient) {
-                $event->patient()->attach([$patient->id]);
-            }
-        }
+//
+//        $diagnosis = $patient->patient_diagnosis->first();
+//        $refferred_from = $diagnosis->refferred_from ? $diagnosis->refferred_from : 'Surgical Followup';
+//        $refferredFrom = '%'.$refferred_from.'%';
+//        $eventType = EventType::where('name', 'like', $refferredFrom)->first();
+//        if(!$eventType) {
+//            $eventType = EventType::firstOrNew(['name' => $refferred_from]);
+//            $eventType->save();
+//        }
+//        if($eventType) {
+//            $event = Event::firstOrNew([
+//                'event_type_id' => $eventType->id,
+//                'all_day' => 'No',
+//                'start' => $request->date,
+//                'end' => $request->date,
+//                'repeat' => 'No',
+//                'repeat_every' => null,
+//                'repeat_end' => null,
+//                'where' => null,
+//                'visibility' => 'Public'
+//            ]);
+//
+//            $event->save();
+//            $what = $event->what;
+//            $what = $what && $what != '' ? $what :  $refferred_from. ' for ';
+//            $what = $what. ' ' .$patient->patient_uuid;
+//            $event->what = $what;
+//            $event->save();
+//            $fPatient = $event->patient()->find($patient->id);
+//            if(!$fPatient) {
+//                $event->patient()->attach([$patient->id]);
+//            }
+//        }
 
         return redirect()->route('surgical.followup.edit', ['patient' => $patient, 'surgicalFollowup' => $surgicalFollowup->id]);
     }
@@ -188,38 +188,38 @@ class SurgicalFollowupController extends Controller
         $this->updatePatientFollowup($surgicalFollowup);
 
 
-        $diagnosis = $patient->patient_diagnosis->first();
-        $refferred_from = $diagnosis->refferred_from ? $diagnosis->refferred_from : 'Surgical Followup';
-        $refferredFrom = '%'.$refferred_from.'%';
-        $eventType = EventType::where('name', 'like', $refferredFrom)->first();
-        if(!$eventType) {
-            $eventType = EventType::firstOrNew(['name' => $refferred_from]);
-            $eventType->save();
-        }
-        if($eventType) {
-            $event = Event::firstOrNew([
-                'event_type_id' => $eventType->id,
-                'all_day' => 'No',
-                'start' => $request->date,
-                'end' => $request->date,
-                'repeat' => 'No',
-                'repeat_every' => null,
-                'repeat_end' => null,
-                'where' => null,
-                'visibility' => 'Public'
-            ]);
-
-            $event->save();
-            $what = $event->what;
-            $what = $what && $what != '' ? $what :  $refferred_from. ' for ';
-            $what = $what. ' ' .$patient->patient_uuid;
-            $event->what = $what;
-            $event->save();
-            $fPatient = $event->patient()->find($patient->id);
-            if(!$fPatient) {
-                $event->patient()->attach([$patient->id]);
-            }
-        }
+//        $diagnosis = $patient->patient_diagnosis->first();
+//        $refferred_from = $diagnosis->refferred_from ? $diagnosis->refferred_from : 'Surgical Followup';
+//        $refferredFrom = '%'.$refferred_from.'%';
+//        $eventType = EventType::where('name', 'like', $refferredFrom)->first();
+//        if(!$eventType) {
+//            $eventType = EventType::firstOrNew(['name' => $refferred_from]);
+//            $eventType->save();
+//        }
+//        if($eventType) {
+//            $event = Event::firstOrNew([
+//                'event_type_id' => $eventType->id,
+//                'all_day' => 'No',
+//                'start' => $request->date,
+//                'end' => $request->date,
+//                'repeat' => 'No',
+//                'repeat_every' => null,
+//                'repeat_end' => null,
+//                'where' => null,
+//                'visibility' => 'Public'
+//            ]);
+//
+//            $event->save();
+//            $what = $event->what;
+//            $what = $what && $what != '' ? $what :  $refferred_from. ' for ';
+//            $what = $what. ' ' .$patient->patient_uuid;
+//            $event->what = $what;
+//            $event->save();
+//            $fPatient = $event->patient()->find($patient->id);
+//            if(!$fPatient) {
+//                $event->patient()->attach([$patient->id]);
+//            }
+//        }
 
         return redirect()->route('surgical.followup.index', ['patient' => $patient]);
     }

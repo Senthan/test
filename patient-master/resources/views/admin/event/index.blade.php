@@ -22,6 +22,7 @@
                                     <div class="item">
                                         <div class="right floated content">
                                             <a href="{{ route('event.type.edit', ['eventType' => $type->id]) }}" class="ui blue button tiny basic">Edit</a>
+                                            <a href="{{ route('event.type.delete', ['eventType' => $type->id]) }}" class="ui red button tiny basic">Delete</a>
                                         </div>
                                         <i data-id="{{ $type->id }}" class="ui {{ $type->class }} empty circular label icon"></i>
                                         <div class="content">{{ $type->name }}</div>

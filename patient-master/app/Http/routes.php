@@ -241,5 +241,8 @@ $router->group(['middleware' => 'admin', 'namespace' => 'Admin', 'prefix' => '']
         $router->post('event/type/', ['as' => 'event.type.store', 'uses' => 'EventTypeController@store']);
         $router->patch('event/type/{eventType}', ['as' => 'event.type.update', 'uses' => 'EventTypeController@update']);
 
+        $router->get('event/type/{eventType}/delete', ['as' => 'event.type.delete', 'uses' => 'EventTypeController@delete']);
+        $router->delete('event/type/{eventType}', ['as' => 'event.type.destroy', 'uses' => 'EventTypeController@destroy']);
+
     });
 });
