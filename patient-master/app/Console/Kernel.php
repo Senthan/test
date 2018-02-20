@@ -14,13 +14,12 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         Commands\SendChatMessage::class,
-        Commands\AutoCreateSurgeryEvent::class,
     ];
 
     /**
      * Define the application's command schedule.
      *
-     * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
+     * @param  \Illuminate\Console\Scheduling\Schedule  $schedule0
      * @return void
      */
     protected function schedule(Schedule $schedule)

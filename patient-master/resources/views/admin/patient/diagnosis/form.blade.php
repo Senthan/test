@@ -601,8 +601,8 @@
                         <tr>
                             <td>Grooming</td>
                             <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 2)->where('col', 1)->where('value', 1)->where('type', 'activities_examination')->first() ? 'active' : '' !!}">Needs help</td>
-                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 2)->where('col', 2)->where('value', 1)->where('type', 'activities_examination')->first() ? 'active' : '' !!}">Occasional</td>
-                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 2)->where('col', 3)->where('value', 1)->where('type', 'activities_examination')->first() ? 'active' : '' !!}">Independent</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 2)->where('col', 2)->where('value', 1)->where('type', 'activities_examination')->first() ? 'active' : '' !!}">Independent</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 2)->where('col', 3)->where('value', 1)->where('type', 'activities_examination')->first() ? 'active' : '' !!}"></td>
                             <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 2)->where('col', 4)->where('value', 1)->where('type', 'activities_examination')->first() ? 'active' : '' !!}"></td>
                         </tr>
                         <tr>

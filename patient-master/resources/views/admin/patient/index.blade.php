@@ -77,7 +77,7 @@
                 { displayName: 'Sensory', field: 'sensory', enableCellEdit: false, minWidth: 150, width: 150},
                 { displayName: 'Activities of daily living', field: 'activities_of_daily_living', enableCellEdit: false, minWidth: 150, width: 150},
                 { displayName: 'Pain Scale', field: 'pain', enableCellEdit: false, minWidth: 150, width: 150},
-                { displayName: 'Xary', field: 'diagnosis',
+                { displayName: 'X-rays', field: 'diagnosis',
                     cellTemplate:'<div ng-repeat="(key, item) in row.entity.diagnosis track by $index">@{{item.x_ray}}</div>',minWidth: 190, width: 190, enableCellEdit: false},
                 { displayName: 'CT Scan', field: 'diagnosis',
                     cellTemplate:'<div ng-repeat="(key, item) in row.entity.diagnosis track by $index">@{{item.ct_scan}}</div>',minWidth: 190, width: 190, enableCellEdit: false},

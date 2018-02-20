@@ -232,7 +232,6 @@
                         <tr class="item1">
                             <td>S1</td>
                             <td>Ankle plantar flexors</td>
-                            <td></td>
                             <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 8)->where('col', 2)->where('value', 1)->where('type', 'root_examination_followup')->count() ? 'active' : '' !!}"></td>
                             <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 8)->where('col', 3)->where('value', 1)->where('type', 'root_examination_followup')->count() ? 'active' : '' !!}"></td>
                             <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 8)->where('col', 4)->where('value', 1)->where('type', 'root_examination_followup')->count() ? 'active' : '' !!}"></td>
@@ -501,7 +500,7 @@
                     <table class="ui celled table pain-scale">
                         <thead>
                         <tr>
-                            <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 0)->where('col', 0)->where('value', 1)->where('type', 'pain_scale_followup')->count() ? 'active' : '' !!}">01</td>
+                            <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 0)->where('col', 0)->where('value', 1)->where('type', 'pain_scale_followup')->count() ? 'active' : '' !!}">0</td>
                             <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 0)->where('col', 1)->where('value', 1)->where('type', 'pain_scale_followup')->count() ? 'active' : '' !!}">1</td>
                             <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 0)->where('col', 2)->where('value', 1)->where('type', 'pain_scale_followup')->count() ? 'active' : '' !!}">2</td>
                             <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 0)->where('col', 3)->where('value', 1)->where('type', 'pain_scale_followup')->count() ? 'active' : '' !!}">3</td>
@@ -558,8 +557,8 @@
                         <tr>
                             <td>Grooming</td>
                             <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 2)->where('col', 1)->where('value', 1)->where('type', 'activities_examination_followup')->count() ? 'active' : '' !!}">Needs help</td>
-                            <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 2)->where('col', 2)->where('value', 1)->where('type', 'activities_examination_followup')->count() ? 'active' : '' !!}">Occasional</td>
-                            <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 2)->where('col', 3)->where('value', 1)->where('type', 'activities_examination_followup')->count() ? 'active' : '' !!}">Independent</td>
+                            <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 2)->where('col', 2)->where('value', 1)->where('type', 'activities_examination_followup')->count() ? 'active' : '' !!}">Independent</td>
+                            <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 2)->where('col', 3)->where('value', 1)->where('type', 'activities_examination_followup')->count() ? 'active' : '' !!}"></td>
                             <td class="{!! $surgicalFollowup->examinationFollowups()->where('patient_id', $patient->id)->where('row', 2)->where('col', 4)->where('value', 1)->where('type', 'activities_examination_followup')->count() ? 'active' : '' !!}"></td>
                         </tr>
                         <tr>
