@@ -3,7 +3,7 @@
     {!! Form::label('patient_uuid', 'OSC No', ['class' => 'col-sm-2 control-label','style' => 'font-size: 18px;']) !!}
     <div class="col-sm-4">
         <div class="ui right labeled input">
-            <div class="ui label">OC</div>
+            <div class="ui label">OSC</div>
             {!! Form::text('patient_uuid', null, ['placeholder' => 'Unique No','style' => 'font-size: 15px;']) !!}
             <div class="ui label">S</div>
         </div>

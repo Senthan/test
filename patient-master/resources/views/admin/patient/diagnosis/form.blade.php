@@ -27,14 +27,22 @@
     </div>
 </div>
 
-
-<div class="form-group {{ ($errors->has('co_mobidities')) ? 'has-error' : '' }} required">
+<div class="form-group {!! ($errors->has('co_mobidities')) ? 'has-error' : '' !!} required">
     {!! Form::label('co_mobidities', 'CO - Morbidities', ['class' => 'col-md-2 control-label']) !!}
-    <div class="col-md-10">
-        {!! Form::textarea('co_mobidities', null, ['class' => 'form-control', 'placeholder' => 'CO - Morbidities']) !!}
-        <p class="help-block">{{ ($errors->has('co_mobidities') ? $errors->first('co_mobidities') : '') }}</p>
+    <div class="col-md-6">
+        {!! Form::select('staff_id', ['Diabetes mellitus' => 'Diabetes mellitus', 'Hypertension' => 'Hypertension', 'Dyslipidemia' => 'Dyslipidemia', 'Bronchial asthma' => 'Bronchial asthma', 'Myocardial infarction' => 'Myocardial infarction', 'TIA' => 'TIA', 'stroke' => 'stroke',
+        'Hypothyroidism' => 'Hypothyroidism', 'Hyperthyroidism' => 'Hyperthyroidism', 'Malignancy' => 'Malignancy', 'Renal diseases' => 'Renal diseases', 'Liver diseases' => 'Liver diseases', 'Cardiac diseases' => 'Cardiac diseases', 'Others' => 'Others'], null, ['class' => 'form-control']) !!}
+        <p class="help-block">{!! ($errors->has('co_mobidities') ? $errors->first('co_mobidities') : '') !!}</p>
     </div>
 </div>
+
+{{--<div class="form-group {{ ($errors->has('co_mobidities')) ? 'has-error' : '' }} required">--}}
+    {{--{!! Form::label('co_mobidities', 'CO - Morbidities', ['class' => 'col-md-2 control-label']) !!}--}}
+    {{--<div class="col-md-10">--}}
+        {{--{!! Form::textarea('co_mobidities', null, ['class' => 'form-control', 'placeholder' => 'CO - Morbidities']) !!}--}}
+        {{--<p class="help-block">{{ ($errors->has('co_mobidities') ? $errors->first('co_mobidities') : '') }}</p>--}}
+    {{--</div>--}}
+{{--</div>--}}
 
 <div class="form-group {{ ($errors->has('drugs_on')) ? 'has-error' : '' }} required">
     {!! Form::label('drugs_on', 'Drugs On', ['class' => 'col-md-2 control-label']) !!}
@@ -68,11 +76,19 @@
     </div>
 </div>
 
-<div class="form-group {{ ($errors->has('presenting_complain')) ? 'has-error' : '' }} required">
-    {!! Form::label('presenting_complain', 'Presenting Complain', ['class' => 'col-md-2 control-label']) !!}
-    <div class="col-md-10">
-        {!! Form::textarea('presenting_complain', null, ['class' => 'form-control', 'placeholder' => 'Presenting Complain']) !!}
-        <p class="help-block">{{ ($errors->has('presenting_complain') ? $errors->first('presenting_complain') : '') }}</p>
+{{--<div class="form-group {{ ($errors->has('presenting_complain')) ? 'has-error' : '' }} required">--}}
+    {{--{!! Form::label('presenting_complain', 'Presenting Complain', ['class' => 'col-md-2 control-label']) !!}--}}
+    {{--<div class="col-md-10">--}}
+        {{--{!! Form::textarea('presenting_complain', null, ['class' => 'form-control', 'placeholder' => 'Presenting Complain']) !!}--}}
+        {{--<p class="help-block">{{ ($errors->has('presenting_complain') ? $errors->first('presenting_complain') : '') }}</p>--}}
+    {{--</div>--}}
+{{--</div>--}}
+
+<div class="form-group {!! ($errors->has('presenting_complain')) ? 'has-error' : '' !!} required">
+    {!! Form::label('presenting_complain', 'Consultant', ['class' => 'col-md-2 control-label']) !!}
+    <div class="col-md-6">
+        {!! Form::select('presenting_complain', ['Neck pain' => 'Neck pain', 'Lower back pain' => 'Lower back pain', 'Upper back pain' => 'Upper back pain', 'Upper limb numbness' => 'Upper limb numbness', 'Upper limb weakness' => 'Upper limb weakness', 'Lower limb numbness' => 'Lower limb numbness', 'Lower limb weakness' => 'Lower limb weakness', 'Abnormal posture' => 'Abnormal posture', 'Others' => 'Others'], null, ['class' => 'form-control']) !!}
+        <p class="help-block">{!! ($errors->has('presenting_complain') ? $errors->first('presenting_complain') : '') !!}</p>
     </div>
 </div>
 
@@ -86,11 +102,19 @@
 </div>
 
 
-<div class="form-group {{ ($errors->has('allergic_history')) ? 'has-error' : '' }} required">
+{{--<div class="form-group {{ ($errors->has('allergic_history')) ? 'has-error' : '' }} required">--}}
+    {{--{!! Form::label('allergic_history', 'Allergic History', ['class' => 'col-md-2 control-label']) !!}--}}
+    {{--<div class="col-md-10">--}}
+        {{--{!! Form::textarea('allergic_history', null, ['class' => 'form-control', 'placeholder' => 'Allergic History', 'rows' => '3']) !!}--}}
+        {{--<p class="help-block">{{ ($errors->has('allergic_history') ? $errors->first('allergic_history') : '') }}</p>--}}
+    {{--</div>--}}
+{{--</div>--}}
+
+<div class="form-group {!! ($errors->has('allergic_history')) ? 'has-error' : '' !!} required">
     {!! Form::label('allergic_history', 'Allergic History', ['class' => 'col-md-2 control-label']) !!}
-    <div class="col-md-10">
-        {!! Form::textarea('allergic_history', null, ['class' => 'form-control', 'placeholder' => 'Allergic History', 'rows' => '3']) !!}
-        <p class="help-block">{{ ($errors->has('allergic_history') ? $errors->first('allergic_history') : '') }}</p>
+    <div class="col-md-6">
+        {!! Form::select('allergic_history', ['Not known' => 'Not known', 'Food allergy' => 'Food allergy', 'Drug allergy' => 'Drug allergy', 'Plaster allergy' => 'Plaster allergy'], null, ['class' => 'form-control']) !!}
+        <p class="help-block">{!! ($errors->has('allergic_history') ? $errors->first('allergic_history') : '') !!}</p>
     </div>
 </div>
 
@@ -102,6 +126,13 @@
             </div>
             <div class="panel-body">
                 <div class="ui green segment">
+                    <div class="form-group {!! ($errors->has('abnormal_reflexes')) ? 'has-error' : '' !!} required">
+                        {!! Form::label('abnormal_reflexes', 'Abnormal reflexest', ['class' => 'col-md-2 control-label']) !!}
+                        <div class="col-md-6">
+                            {!! Form::select('allergic_history', ['Yes' => 'Yes', 'No' => 'No'], null, ['class' => 'form-control']) !!}
+                            <p class="help-block">{!! ($errors->has('abnormal_reflexes') ? $errors->first('abnormal_reflexes') : '') !!}</p>
+                        </div>
+                    </div>
 
                     <table class="ui celled table root-examination">
                         <thead>
@@ -443,6 +474,15 @@
             </div>
             <div class="panel-body">
                 <div class="ui blue segment">
+
+                    <div class="form-group {!! ($errors->has('sensory_impairment')) ? 'has-error' : '' !!} required">
+                        {!! Form::label('sensory_impairment', 'Sensory impairment', ['class' => 'col-md-2 control-label']) !!}
+                        <div class="col-md-6">
+                            {!! Form::select('sensory_impairment', ['Yes' => 'Yes', 'No' => 'No'], null, ['class' => 'form-control']) !!}
+                            <p class="help-block">{!! ($errors->has('sensory_impairment') ? $errors->first('sensory_impairment') : '') !!}</p>
+                        </div>
+                    </div>
+
                     <table class="ui celled table sensory-impairment">
                         <thead>
                         </thead>
@@ -714,15 +754,21 @@
     </div>
 </div>
 
-<div class="form-group {{ ($errors->has('diagnosis')) ? 'has-error' : '' }} required">
+{{--<div class="form-group {{ ($errors->has('diagnosis')) ? 'has-error' : '' }} required">--}}
+    {{--{!! Form::label('diagnosis', 'Diagnosis', ['class' => 'col-md-2 control-label']) !!}--}}
+    {{--<div class="col-md-10">--}}
+        {{--{!! Form::textarea('diagnosis', null, ['class' => 'form-control', 'placeholder' => 'Diagnosis', 'rows' => '1']) !!}--}}
+        {{--<p class="help-block">{{ ($errors->has('diagnosis') ? $errors->first('diagnosis') : '') }}</p>--}}
+    {{--</div>--}}
+{{--</div>--}}
+
+<div class="form-group {!! ($errors->has('diagnosis')) ? 'has-error' : '' !!} required">
     {!! Form::label('diagnosis', 'Diagnosis', ['class' => 'col-md-2 control-label']) !!}
-    <div class="col-md-10">
-        {!! Form::textarea('diagnosis', null, ['class' => 'form-control', 'placeholder' => 'Diagnosis', 'rows' => '1']) !!}
-        <p class="help-block">{{ ($errors->has('diagnosis') ? $errors->first('diagnosis') : '') }}</p>
+    <div class="col-md-6">
+        {!! Form::select('diagnosis', ['Trauma' => 'Trauma', 'Degenerative disease' => 'Degenerative disease', 'Tumor' => 'Tumor', 'Congenital disease' => 'Congenital disease', 'Others' => 'Others'], null, ['class' => 'form-control']) !!}
+        <p class="help-block">{!! ($errors->has('diagnosis') ? $errors->first('diagnosis') : '') !!}</p>
     </div>
 </div>
-
-
 
 <div class="form-group {{ ($errors->has('history')) ? 'has-error' : '' }} required">
     <div class="col-md-12">
@@ -732,18 +778,86 @@
             </div>
             <div class="panel-body">
 
+                <div class="form-group {!! ($errors->has('surgery')) ? 'has-error' : '' !!} required">
+                    {!! Form::label('surgery', 'surgery', ['class' => 'col-md-2 control-label']) !!}
+                    <div class="col-md-6">
+                        {!! Form::select('surgery', ['ACDF' => 'ACDF', 'Lateral mass screw' => 'Lateral mass screw', 'TPS' => 'TPS', 'Laminoplasty' => 'Laminoplasty', 'Occipitocervical fusion' => 'Occipitocervical fusion', 'TLIF' => 'TLIF', 'Dissectomy' => 'Dissectomy', 'Decompression' => 'Decompression', 'Others' => 'Others'], null, ['class' => 'form-control']) !!}
+                        <p class="help-block">{!! ($errors->has('surgery') ? $errors->first('surgery') : '') !!}</p>
+                    </div>
+                </div>
+
+                <div class="form-group {!! ($errors->has('type_of_surgery')) ? 'has-error' : '' !!} required">
+                    {!! Form::label('type_of_surgery', 'Type of Surgery', ['class' => 'col-md-2 control-label']) !!}
+                    <div class="col-md-6">
+                        {!! Form::select('type_of_surgery', ['Open' => 'Open', 'Minimal invasive' => 'Minimal invasive'], null, ['class' => 'form-control']) !!}
+                        <p class="help-block">{!! ($errors->has('type_of_surgery') ? $errors->first('type_of_surgery') : '') !!}</p>
+                    </div>
+                </div>
+
+                <div class="form-group {!! ($errors->has('level_of_surgery')) ? 'has-error' : '' !!} required">
+                    {!! Form::label('level_of_surgery', 'Level of Surgery', ['class' => 'col-md-2 control-label']) !!}
+                    <div class="col-md-6">
+                        {!! Form::select('level_of_surgery', ['C1' => 'C1', 'C2' => 'C2', 'C3' => 'C3', 'C4' => 'C4', 'C5' => 'C5', 'C6' => 'C6', 'C7' => 'C7', 'T1' => 'T1', 'T2' => 'T2', 'T3' => 'T3', 'T4' => 'T4', 'T5' => 'T5', 'T6' => 'T6', 'T7' => 'T7', 'T8' => 'T8', 'T9' => 'T9', 'T10' => 'T10', 'T11' =>  'T11', 'T12' => 'T12', 'L1' => 'L1', 'L2' => 'L2', 'L3' => 'L3', 'L4' => 'L4', 'L5' => 'L5', 'S1' => 'S1'], null, ['class' => 'form-control']) !!}
+                        <p class="help-block">{!! ($errors->has('level_of_surgery') ? $errors->first('level_of_surgery') : '') !!}</p>
+                    </div>
+                </div>
+
+                <div class="form-group {{ ($errors->has('date_of_surgery')) ? 'has-error' : '' }} required">
+                    {!! Form::label('date_of_surgery', 'Date of Surgery', ['class' => 'col-md-2 control-label']) !!}
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                            {!! Form::text('date_of_surgery', null, ['class' => 'form-control', 'placeholder' => 'Date of Surgery']) !!}
+                        </div>
+                        <p class="help-block">{{ ($errors->has('date_of_surgery') ? $errors->first('date_of_surgery') : '') }}</p>
+                    </div>
+                </div>
+
                 <div class="form-group {{ ($errors->has('surgical_management')) ? 'has-error' : '' }} required">
-                    {!! Form::label('surgical_management', 'Surgical Management', ['class' => 'col-md-2 control-label']) !!}
+                    {!! Form::label('surgical_management', 'Others', ['class' => 'col-md-2 control-label']) !!}
                     <div class="col-md-10">
                         {!! Form::textarea('surgical_management', null, ['class' => 'form-control', 'placeholder' => 'Surgical Management', 'rows' => '3']) !!}
                         <p class="help-block">{{ ($errors->has('surgical_management') ? $errors->first('surgical_management') : '') }}</p>
                     </div>
                 </div>
 
+
+                <div class="form-group {!! ($errors->has('physiotherapy')) ? 'has-error' : '' !!} required">
+                    {!! Form::label('physiotherapy', 'Physiotherapy', ['class' => 'col-md-2 control-label']) !!}
+                    <div class="col-md-6">
+                        {!! Form::select('physiotherapy', ['Yes' => 'Yes', 'No' => 'No'], null, ['class' => 'form-control']) !!}
+                        <p class="help-block">{!! ($errors->has('physiotherapy') ? $errors->first('physiotherapy') : '') !!}</p>
+                    </div>
+                </div>
+
+                <div class="form-group {!! ($errors->has('analgesics')) ? 'has-error' : '' !!} required">
+                    {!! Form::label('analgesics', 'Analgesics', ['class' => 'col-md-2 control-label']) !!}
+                    <div class="col-md-6">
+                        {!! Form::select('analgesics', ['Yes' => 'Yes', 'No' => 'No'], null, ['class' => 'form-control']) !!}
+                        <p class="help-block">{!! ($errors->has('analgesics') ? $errors->first('analgesics') : '') !!}</p>
+                    </div>
+                </div>
+
+                <div class="form-group {!! ($errors->has('orthosis')) ? 'has-error' : '' !!} required">
+                    {!! Form::label('orthosis', 'Orthosis', ['class' => 'col-md-2 control-label']) !!}
+                    <div class="col-md-6">
+                        {!! Form::select('orthosis', ['Yes' => 'Yes', 'No' => 'No'], null, ['class' => 'form-control']) !!}
+                        <p class="help-block">{!! ($errors->has('orthosis') ? $errors->first('orthosis') : '') !!}</p>
+                    </div>
+                </div>
+
+                <div class="form-group {!! ($errors->has('epidural_injection')) ? 'has-error' : '' !!} required">
+                    {!! Form::label('epidural_injection', 'Epidural injection', ['class' => 'col-md-2 control-label']) !!}
+                    <div class="col-md-6">
+                        {!! Form::select('epidural_injection', ['Yes' => 'Yes', 'No' => 'No'], null, ['class' => 'form-control']) !!}
+                        <p class="help-block">{!! ($errors->has('epidural_injection') ? $errors->first('epidural_injection') : '') !!}</p>
+                    </div>
+                </div>
+
                 <div class="form-group {{ ($errors->has('non_surgical_management')) ? 'has-error' : '' }} required">
-                    {!! Form::label('non_surgical_management', 'Non Surgical Management', ['class' => 'col-md-2 control-label']) !!}
+                    {!! Form::label('non_surgical_management', 'Others', ['class' => 'col-md-2 control-label']) !!}
                     <div class="col-md-10">
-                        {!! Form::textarea('non_surgical_management', null, ['class' => 'form-control', 'placeholder' => 'Non Surgical Management']) !!}
+                        {!! Form::textarea('non_surgical_management', null, ['class' => 'form-control', 'placeholder' => 'Others']) !!}
                         <p class="help-block">{{ ($errors->has('non_surgical_management') ? $errors->first('non_surgical_management') : '') }}</p>
                     </div>
                 </div>

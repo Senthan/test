@@ -12,6 +12,7 @@ class SendChatMessage extends Command
 
     public function handle()
     {
+        
         // Fire off an event, just randomly grabbing the first user for now
         $user = $this->argument('user');
         $message = \App\ChatMessage::create([

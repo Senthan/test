@@ -79,7 +79,7 @@
                 return 0;
             };
             var columnDefs = [
-                { displayName: 'OSC No', field: 'patient_uuid', enableCellEdit: false, minWidth: 100, width: 130, pinnedLeft:true, sortFn: myAwesomeSortFn},
+                { displayName: 'OSC No', field: 'patient_uuid', minWidth: 100, width: 130, pinnedLeft:true, sortFn: myAwesomeSortFn},
                 { displayName: 'Name', field: 'name', minWidth: 150, width: 150},
                 { displayName: 'Age', field: 'age', minWidth: 60, width: 60},
                 { displayName: 'Sex', field: 'sex', editableCellTemplate: 'ui-grid/dropdownEditor',
@@ -110,7 +110,7 @@
                     cellTemplate:'<div>@{{row.entity.surgical_followup[row.entity.surgical_followup.length-1].date}}</div>',minWidth: 190, width: 190, enableCellEdit: false},
                 { displayName: 'Surgical Management', field: 'diagnosis',
                     cellTemplate:'<div ng-repeat="(key, item) in row.entity.diagnosis track by $index">@{{item.surgical_management}}</div>',minWidth: 190, width: 190, enableCellEdit: false},
-                 { displayName: 'Non Surgical Management', field: 'diagnosis',
+                { displayName: 'Non Surgical Management', field: 'diagnosis',
                     cellTemplate:'<div ng-repeat="(key, item) in row.entity.diagnosis track by $index">@{{item.non_surgical_management}}</div>',minWidth: 190, width: 190, enableCellEdit: false},
                 { displayName: 'Drugs given', field: 'diagnosis',
                     cellTemplate:'<div ng-repeat="(key, item) in row.entity.diagnosis track by $index">@{{item.drugs_given}}</div>',minWidth: 190, width: 190, enableCellEdit: false}
