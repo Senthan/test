@@ -30,7 +30,7 @@
 <div class="form-group {!! ($errors->has('co_mobidities')) ? 'has-error' : '' !!} required">
     {!! Form::label('co_mobidities', 'CO - Morbidities', ['class' => 'col-md-2 control-label']) !!}
     <div class="col-md-6">
-        {!! Form::select('staff_id', ['Diabetes mellitus' => 'Diabetes mellitus', 'Hypertension' => 'Hypertension', 'Dyslipidemia' => 'Dyslipidemia', 'Bronchial asthma' => 'Bronchial asthma', 'Myocardial infarction' => 'Myocardial infarction', 'TIA' => 'TIA', 'stroke' => 'stroke',
+        {!! Form::select('co_mobidities', ['Diabetes mellitus' => 'Diabetes mellitus', 'Hypertension' => 'Hypertension', 'Dyslipidemia' => 'Dyslipidemia', 'Bronchial asthma' => 'Bronchial asthma', 'Myocardial infarction' => 'Myocardial infarction', 'TIA' => 'TIA', 'stroke' => 'stroke',
         'Hypothyroidism' => 'Hypothyroidism', 'Hyperthyroidism' => 'Hyperthyroidism', 'Malignancy' => 'Malignancy', 'Renal diseases' => 'Renal diseases', 'Liver diseases' => 'Liver diseases', 'Cardiac diseases' => 'Cardiac diseases', 'Others' => 'Others'], null, ['class' => 'form-control']) !!}
         <p class="help-block">{!! ($errors->has('co_mobidities') ? $errors->first('co_mobidities') : '') !!}</p>
     </div>
@@ -129,7 +129,7 @@
                     <div class="form-group {!! ($errors->has('abnormal_reflexes')) ? 'has-error' : '' !!} required">
                         {!! Form::label('abnormal_reflexes', 'Abnormal reflexest', ['class' => 'col-md-2 control-label']) !!}
                         <div class="col-md-6">
-                            {!! Form::select('allergic_history', ['Yes' => 'Yes', 'No' => 'No'], null, ['class' => 'form-control']) !!}
+                            {!! Form::select('abnormal_reflexes', ['Yes' => 'Yes', 'No' => 'No'], null, ['class' => 'form-control']) !!}
                             <p class="help-block">{!! ($errors->has('abnormal_reflexes') ? $errors->first('abnormal_reflexes') : '') !!}</p>
                         </div>
                     </div>

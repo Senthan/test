@@ -39,6 +39,14 @@ class CreateDiagnosesTable extends Migration
             $table->text('drugs_given')->nullable()->default(null);
             $table->text('surgical_management')->nullable()->default(null);
             $table->text('non_surgical_management')->nullable()->default(null);
+
+            $table->date('date_of_admission')->nullable()->default(null);
+            $table->string('level_of_surgery')->nullable()->default(null);
+            $table->string('type_of_surgery')->nullable()->default(null);
+            $table->string('surgery')->nullable()->default(null);
+            $table->string('sensory_impairment')->nullable()->default(null);
+            $table->string('abnormal_reflexes')->nullable()->default(null);
+
             $table->timestamps();
         });
     }

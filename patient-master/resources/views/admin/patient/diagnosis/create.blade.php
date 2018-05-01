@@ -300,5 +300,12 @@
             }
         }
     }]);
+    $(function () {
+
+        $('#date_of_surgery').datetimepicker({
+            format: 'YYYY-MM-DD'
+        });
+
+    });
 </script>
 @endsection
