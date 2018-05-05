@@ -113,7 +113,7 @@
 <div class="form-group {!! ($errors->has('allergic_history')) ? 'has-error' : '' !!} required">
     {!! Form::label('allergic_history', 'Allergic History', ['class' => 'col-md-2 control-label']) !!}
     <div class="col-md-6">
-        {!! Form::select('allergic_history', ['' => 'Se;ect Allergic History', 'Not known' => 'Not known', 'Food allergy' => 'Food allergy', 'Drug allergy' => 'Drug allergy', 'Plaster allergy' => 'Plaster allergy'], null, ['class' => 'form-control']) !!}
+        {!! Form::select('allergic_history', ['' => 'Select Allergic History', 'Not known' => 'Not known', 'Food allergy' => 'Food allergy', 'Drug allergy' => 'Drug allergy', 'Plaster allergy' => 'Plaster allergy'], null, ['class' => 'form-control']) !!}
         <p class="help-block">{!! ($errors->has('allergic_history') ? $errors->first('allergic_history') : '') !!}</p>
     </div>
 </div>
@@ -129,7 +129,7 @@
                     <div class="form-group {!! ($errors->has('abnormal_reflexes')) ? 'has-error' : '' !!} required">
                         {!! Form::label('abnormal_reflexes', 'Abnormal reflexest', ['class' => 'col-md-2 control-label']) !!}
                         <div class="col-md-6">
-                            {!! Form::select('abnormal_reflexes', ['' =>'Selecy Abnormal reflexest', 'Yes' => 'Yes', 'No' => 'No'], null, ['class' => 'form-control']) !!}
+                            {!! Form::select('abnormal_reflexes', ['' =>'Select Abnormal reflexest', 'Yes' => 'Yes', 'No' => 'No'], null, ['class' => 'form-control']) !!}
                             <p class="help-block">{!! ($errors->has('abnormal_reflexes') ? $errors->first('abnormal_reflexes') : '') !!}</p>
                         </div>
                     </div>
