@@ -269,7 +269,7 @@ class PatientController extends Controller
     public function storeDiagnosis(AddDiagnosisStoreRequest $request, Patient $patient)
     {
         $diagnosis = new Diagnosis();
-        $diagnosis->co_mobidities = $request->co_mobidities;
+        $diagnosis->co_mobidities = json_encode($request->co_mobidities);
         $diagnosis->drugs_on = $request->drugs_on;
         $diagnosis->height = $request->height;
         $diagnosis->weight = $request->weight;
@@ -280,10 +280,10 @@ class PatientController extends Controller
         $diagnosis->date = $request->date;
         $diagnosis->staff_id = $request->staff_id;
         $diagnosis->refferred_from = $request->refferred_from;
-        $diagnosis->presenting_complain = $request->presenting_complain;
+        $diagnosis->presenting_complain = json_encode($request->presenting_complain);
         $diagnosis->past_surgical_history = $request->past_surgical_history;
-        $diagnosis->allergic_history = $request->allergic_history;
-        $diagnosis->diagnosis = $request->diagnosis;
+        $diagnosis->allergic_history = json_encode($request->allergic_history);
+        $diagnosis->diagnosis = json_encode($request->diagnosis);
         $diagnosis->management_plan = $request->management_plan;
         $diagnosis->surgical_management = $request->surgical_management;
         $diagnosis->non_surgical_management = $request->non_surgical_management;
@@ -297,11 +297,11 @@ class PatientController extends Controller
         $diagnosis->si_treatment_template = $request->si_treatment_template;
 
         $diagnosis->date_of_admission = $request->date_of_admission;
-        $diagnosis->level_of_surgery = $request->level_of_surgery;
+        $diagnosis->level_of_surgery = json_encode($request->level_of_surgery);
         $diagnosis->type_of_surgery = $request->type_of_surgery;
         $diagnosis->surgery = $request->surgery;
         $diagnosis->sensory_impairment = $request->sensory_impairment;
-        $diagnosis->abnormal_reflexes = $request->abnormal_reflexes;
+        $diagnosis->abnormal_reflexes = json_encode($request->abnormal_reflexes);
         $diagnosis->year = $request->year;
         $diagnosis->month = $request->month;
         $diagnosis->day = $request->day;
@@ -367,14 +367,18 @@ class PatientController extends Controller
         $followUp = $diagnosis->followUp()->with('drug', 'dose')->get();
         $drugs = Drug::lists('name', 'id');
         $doses = Drug::with('dose')->get();
-
+        $diagnosis->co_mobidities = $diagnosis->co_mobidities ? json_decode($diagnosis->co_mobidities) : '';
+        $diagnosis->presenting_complain = $diagnosis->presenting_complain ? json_decode($diagnosis->presenting_complain) : '';
+        $diagnosis->allergic_history = $diagnosis->allergic_history ? json_decode($diagnosis->allergic_history) : '';
+        $diagnosis->diagnosis = is_string($diagnosis->diagnosis) && is_array(json_decode($diagnosis->diagnosis, true)) ? json_decode($diagnosis->diagnosis) : '';
+        $diagnosis->level_of_surgery = is_string($diagnosis->level_of_surgery) && is_array(json_decode($diagnosis->level_of_surgery, true))  ? json_decode($diagnosis->level_of_surgery) : '';
         return view('admin.patient.diagnosis.edit', compact('examination', 'bioChemistry', 'microBiology', 'drugs','doses','followUp', 'patient', 'consultants','diagnosis', 'diagnosisTypes', 'diagnosisTypeNames', 'surgeryType', 'examination', 'bloodTest', 'investigationUltraSoundScan'));
 
     }
 
     public function updateDiagnosis(AddDiagnosisStoreRequest $request, Patient $patient, Diagnosis $diagnosis)
     {
-        $diagnosis->co_mobidities = $request->co_mobidities;
+        $diagnosis->co_mobidities = json_encode($request->co_mobidities);
         $diagnosis->drugs_on = $request->drugs_on;
         $diagnosis->height = $request->height;
         $diagnosis->weight = $request->weight;
@@ -385,15 +389,15 @@ class PatientController extends Controller
         $diagnosis->date = $request->date;
         $diagnosis->staff_id = $request->staff_id;
         $diagnosis->refferred_from = $request->refferred_from;
-        $diagnosis->presenting_complain = $request->presenting_complain;
+        $diagnosis->presenting_complain = json_encode($request->presenting_complain);
         $diagnosis->past_surgical_history = $request->past_surgical_history;
-        $diagnosis->allergic_history = $request->allergic_history;
+        $diagnosis->allergic_history = json_encode($request->allergic_history);
         $diagnosis->x_ray = $request->x_ray;
         $diagnosis->ct_scan = $request->ct_scan;
         $diagnosis->miri_scan = $request->miri_scan;
         $diagnosis->other_imaging = $request->other_imaging;
 
-        $diagnosis->diagnosis = $request->diagnosis;
+        $diagnosis->diagnosis = json_encode($request->diagnosis);
         $diagnosis->drugs_given = $request->drugs_given;
         $diagnosis->surgical_management = $request->surgical_management;
         $diagnosis->non_surgical_management = $request->non_surgical_management;
@@ -405,7 +409,7 @@ class PatientController extends Controller
 
 
         $diagnosis->date_of_admission = $request->date_of_admission;
-        $diagnosis->level_of_surgery = $request->level_of_surgery;
+        $diagnosis->level_of_surgery = json_encode($request->level_of_surgery);
         $diagnosis->type_of_surgery = $request->type_of_surgery;
         $diagnosis->surgery = $request->surgery;
         $diagnosis->sensory_impairment = $request->sensory_impairment;
