@@ -31,7 +31,7 @@
     {!! Form::label('co_mobidities', 'CO - Morbidities', ['class' => 'col-md-2 control-label']) !!}
     <div class="col-md-6">
         {!! Form::select('co_mobidities', ['' => 'Select CO - Morbidities', 'Diabetes mellitus' => 'Diabetes mellitus', 'Hypertension' => 'Hypertension', 'Dyslipidemia' => 'Dyslipidemia', 'Bronchial asthma' => 'Bronchial asthma', 'Myocardial infarction' => 'Myocardial infarction', 'TIA' => 'TIA', 'stroke' => 'stroke',
-        'Hypothyroidism' => 'Hypothyroidism', 'Hyperthyroidism' => 'Hyperthyroidism', 'Malignancy' => 'Malignancy', 'Renal diseases' => 'Renal diseases', 'Liver diseases' => 'Liver diseases', 'Cardiac diseases' => 'Cardiac diseases', 'Others' => 'Others'], null, ['class' => 'form-control']) !!}
+        'Hypothyroidism' => 'Hypothyroidism', 'Hyperthyroidism' => 'Hyperthyroidism', 'Malignancy' => 'Malignancy', 'Renal diseases' => 'Renal diseases', 'Liver diseases' => 'Liver diseases', 'Cardiac diseases' => 'Cardiac diseases', 'Others' => 'Others'], null, ['class' => 'form-control multiple']) !!}
         <p class="help-block">{!! ($errors->has('co_mobidities') ? $errors->first('co_mobidities') : '') !!}</p>
     </div>
 </div>
@@ -87,8 +87,22 @@
 <div class="form-group {!! ($errors->has('presenting_complain')) ? 'has-error' : '' !!} required">
     {!! Form::label('presenting_complain', 'Presenting Complain', ['class' => 'col-md-2 control-label']) !!}
     <div class="col-md-6">
-        {!! Form::select('presenting_complain', ['' => 'Select Presenting Complain', 'Neck pain' => 'Neck pain', 'Lower back pain' => 'Lower back pain', 'Upper back pain' => 'Upper back pain', 'Upper limb numbness' => 'Upper limb numbness', 'Upper limb weakness' => 'Upper limb weakness', 'Lower limb numbness' => 'Lower limb numbness', 'Lower limb weakness' => 'Lower limb weakness', 'Abnormal posture' => 'Abnormal posture', 'Others' => 'Others'], null, ['class' => 'form-control']) !!}
+        {!! Form::select('presenting_complain', ['' => 'Select Presenting Complain', 'Neck pain' => 'Neck pain', 'Lower back pain' => 'Lower back pain', 'Upper back pain' => 'Upper back pain', 'Upper limb numbness' => 'Upper limb numbness', 'Upper limb weakness' => 'Upper limb weakness', 'Lower limb numbness' => 'Lower limb numbness', 'Lower limb weakness' => 'Lower limb weakness', 'Abnormal posture' => 'Abnormal posture', 'Others' => 'Others'], null, ['class' => 'form-control multiple']) !!}
         <p class="help-block">{!! ($errors->has('presenting_complain') ? $errors->first('presenting_complain') : '') !!}</p>
+    </div>
+</div>
+
+<div class="form-group {!! ($errors->has('duration')) ? 'has-error' : '' !!} required">
+    {!! Form::label('duration', 'Duration', ['class' => 'col-md-2 control-label']) !!}
+    <div class="col-md-6">
+        <div class="form-control ">
+            {!! Form::label('year', 'Years', ['class' => 'col-md-2 control-label']) !!}
+            {!! Form::number('year', null, ['class' => 'col-md-2']) !!}
+            {!! Form::label('month', 'Months', ['class' => 'col-md-2 control-label']) !!}
+            {!! Form::number('month', null, ['class' => 'col-md-2']) !!}
+            {!! Form::label('day', 'Days', ['class' => 'col-md-2 control-label']) !!}
+            {!! Form::number('day', null, ['class' => 'col-md-2']) !!}
+        </div>
     </div>
 </div>
 
@@ -113,7 +127,7 @@
 <div class="form-group {!! ($errors->has('allergic_history')) ? 'has-error' : '' !!} required">
     {!! Form::label('allergic_history', 'Allergic History', ['class' => 'col-md-2 control-label']) !!}
     <div class="col-md-6">
-        {!! Form::select('allergic_history', ['' => 'Select Allergic History', 'Not known' => 'Not known', 'Food allergy' => 'Food allergy', 'Drug allergy' => 'Drug allergy', 'Plaster allergy' => 'Plaster allergy'], null, ['class' => 'form-control']) !!}
+        {!! Form::select('allergic_history', ['' => 'Select Allergic History', 'Not known' => 'Not known', 'Food allergy' => 'Food allergy', 'Drug allergy' => 'Drug allergy', 'Plaster allergy' => 'Plaster allergy'], null, ['class' => 'form-control multiple']) !!}
         <p class="help-block">{!! ($errors->has('allergic_history') ? $errors->first('allergic_history') : '') !!}</p>
     </div>
 </div>
@@ -473,6 +487,8 @@
                 <h3>Sensory Impairment</h3>
             </div>
             <div class="panel-body">
+
+
                 <div class="ui blue segment">
 
                     <div class="form-group {!! ($errors->has('sensory_impairment')) ? 'has-error' : '' !!} required">
@@ -483,20 +499,21 @@
                         </div>
                     </div>
 
-                    <table class="ui celled table sensory-impairment">
+                    <table class="ui celled table right-sensory-impairment">
                         <thead>
+                        <h3>Right</h3>
                         </thead>
                         <tbody>
                         <tr>
                             <td>Cervical</td>
-                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 0)->where('col', 1)->where('value', 1)->where('type', 'sensory_impairment')->first() ? 'active' : '' !!}">C1</td>
-                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 0)->where('col', 2)->where('value', 1)->where('type', 'sensory_impairment')->first() ? 'active' : '' !!}">C2</td>
-                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 0)->where('col', 3)->where('value', 1)->where('type', 'sensory_impairment')->first() ? 'active' : '' !!}">C3</td>
-                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 0)->where('col', 4)->where('value', 1)->where('type', 'sensory_impairment')->first() ? 'active' : '' !!}">C4</td>
-                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 0)->where('col', 5)->where('value', 1)->where('type', 'sensory_impairment')->first() ? 'active' : '' !!}">C5</td>
-                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 0)->where('col', 6)->where('value', 1)->where('type', 'sensory_impairment')->first() ? 'active' : '' !!}">C6</td>
-                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 0)->where('col', 7)->where('value', 1)->where('type', 'sensory_impairment')->first() ? 'active' : '' !!}">C7</td>
-                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 0)->where('col', 8)->where('value', 1)->where('type', 'sensory_impairment')->first() ? 'active' : '' !!}">C8</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 0)->where('col', 1)->where('value', 1)->where('type', 'right_sensory_impairment')->first() ? 'active' : '' !!}">C1</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 0)->where('col', 2)->where('value', 1)->where('type', 'right_sensory_impairment')->first() ? 'active' : '' !!}">C2</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 0)->where('col', 3)->where('value', 1)->where('type', 'right_sensory_impairment')->first() ? 'active' : '' !!}">C3</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 0)->where('col', 4)->where('value', 1)->where('type', 'right_sensory_impairment')->first() ? 'active' : '' !!}">C4</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 0)->where('col', 5)->where('value', 1)->where('type', 'right_sensory_impairment')->first() ? 'active' : '' !!}">C5</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 0)->where('col', 6)->where('value', 1)->where('type', 'right_sensory_impairment')->first() ? 'active' : '' !!}">C6</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 0)->where('col', 7)->where('value', 1)->where('type', 'right_sensory_impairment')->first() ? 'active' : '' !!}">C7</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 0)->where('col', 8)->where('value', 1)->where('type', 'right_sensory_impairment')->first() ? 'active' : '' !!}">C8</td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -504,26 +521,26 @@
                         </tr>
                         <tr>
                             <td>Thoracic</td>
-                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 1)->where('col', 1)->where('value', 1)->where('type', 'sensory_impairment')->first() ? 'active' : '' !!}">T1</td>
-                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 1)->where('col', 2)->where('value', 1)->where('type', 'sensory_impairment')->first() ? 'active' : '' !!}">T2</td>
-                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 1)->where('col', 3)->where('value', 1)->where('type', 'sensory_impairment')->first() ? 'active' : '' !!}">T3</td>
-                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 1)->where('col', 4)->where('value', 1)->where('type', 'sensory_impairment')->first() ? 'active' : '' !!}">T4</td>
-                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 1)->where('col', 5)->where('value', 1)->where('type', 'sensory_impairment')->first() ? 'active' : '' !!}">T5</td>
-                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 1)->where('col', 6)->where('value', 1)->where('type', 'sensory_impairment')->first() ? 'active' : '' !!}">T6</td>
-                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 1)->where('col', 7)->where('value', 1)->where('type', 'sensory_impairment')->first() ? 'active' : '' !!}">T7</td>
-                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 1)->where('col', 8)->where('value', 1)->where('type', 'sensory_impairment')->first() ? 'active' : '' !!}">T8</td>
-                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 1)->where('col', 9)->where('value', 1)->where('type', 'sensory_impairment')->first() ? 'active' : '' !!}">T9</td>
-                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 1)->where('col', 10)->where('value', 1)->where('type', 'sensory_impairment')->first() ? 'active' : '' !!}">T10</td>
-                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 1)->where('col', 11)->where('value', 1)->where('type', 'sensory_impairment')->first() ? 'active' : '' !!}">T11</td>
-                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 1)->where('col', 12)->where('value', 1)->where('type', 'sensory_impairment')->first() ? 'active' : '' !!}">T12</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 1)->where('col', 1)->where('value', 1)->where('type', 'right_sensory_impairment')->first() ? 'active' : '' !!}">T1</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 1)->where('col', 2)->where('value', 1)->where('type', 'right_sensory_impairment')->first() ? 'active' : '' !!}">T2</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 1)->where('col', 3)->where('value', 1)->where('type', 'right_sensory_impairment')->first() ? 'active' : '' !!}">T3</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 1)->where('col', 4)->where('value', 1)->where('type', 'right_sensory_impairment')->first() ? 'active' : '' !!}">T4</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 1)->where('col', 5)->where('value', 1)->where('type', 'right_sensory_impairment')->first() ? 'active' : '' !!}">T5</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 1)->where('col', 6)->where('value', 1)->where('type', 'right_sensory_impairment')->first() ? 'active' : '' !!}">T6</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 1)->where('col', 7)->where('value', 1)->where('type', 'right_sensory_impairment')->first() ? 'active' : '' !!}">T7</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 1)->where('col', 8)->where('value', 1)->where('type', 'right_sensory_impairment')->first() ? 'active' : '' !!}">T8</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 1)->where('col', 9)->where('value', 1)->where('type', 'right_sensory_impairment')->first() ? 'active' : '' !!}">T9</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 1)->where('col', 10)->where('value', 1)->where('type', 'right_sensory_impairment')->first() ? 'active' : '' !!}">T10</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 1)->where('col', 11)->where('value', 1)->where('type', 'right_sensory_impairment')->first() ? 'active' : '' !!}">T11</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 1)->where('col', 12)->where('value', 1)->where('type', 'right_sensory_impairment')->first() ? 'active' : '' !!}">T12</td>
                         </tr>
                         <tr>
                             <td>Lumbar</td>
-                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 2)->where('col', 1)->where('value', 1)->where('type', 'sensory_impairment')->first() ? 'active' : '' !!}">L1</td>
-                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 2)->where('col', 2)->where('value', 1)->where('type', 'sensory_impairment')->first() ? 'active' : '' !!}">L2</td>
-                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 2)->where('col', 3)->where('value', 1)->where('type', 'sensory_impairment')->first() ? 'active' : '' !!}">L3</td>
-                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 2)->where('col', 4)->where('value', 1)->where('type', 'sensory_impairment')->first() ? 'active' : '' !!}">L4</td>
-                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 2)->where('col', 5)->where('value', 1)->where('type', 'sensory_impairment')->first() ? 'active' : '' !!}">L5</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 2)->where('col', 1)->where('value', 1)->where('type', 'right_sensory_impairment')->first() ? 'active' : '' !!}">L1</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 2)->where('col', 2)->where('value', 1)->where('type', 'right_sensory_impairment')->first() ? 'active' : '' !!}">L2</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 2)->where('col', 3)->where('value', 1)->where('type', 'right_sensory_impairment')->first() ? 'active' : '' !!}">L3</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 2)->where('col', 4)->where('value', 1)->where('type', 'right_sensory_impairment')->first() ? 'active' : '' !!}">L4</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 2)->where('col', 5)->where('value', 1)->where('type', 'right_sensory_impairment')->first() ? 'active' : '' !!}">L5</td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -534,11 +551,11 @@
                         </tr>
                         <tr>
                             <td>Sacral</td>
-                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 3)->where('col', 1)->where('value', 1)->where('type', 'sensory_impairment')->first() ? 'active' : '' !!}">S1</td>
-                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 3)->where('col', 2)->where('value', 1)->where('type', 'sensory_impairment')->first() ? 'active' : '' !!}">S2</td>
-                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 3)->where('col', 3)->where('value', 1)->where('type', 'sensory_impairment')->first() ? 'active' : '' !!}">S3</td>
-                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 3)->where('col', 4)->where('value', 1)->where('type', 'sensory_impairment')->first() ? 'active' : '' !!}">S4</td>
-                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 3)->where('col', 5)->where('value', 1)->where('type', 'sensory_impairment')->first() ? 'active' : '' !!}">S5</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 3)->where('col', 1)->where('value', 1)->where('type', 'right_sensory_impairment')->first() ? 'active' : '' !!}">S1</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 3)->where('col', 2)->where('value', 1)->where('type', 'right_sensory_impairment')->first() ? 'active' : '' !!}">S2</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 3)->where('col', 3)->where('value', 1)->where('type', 'right_sensory_impairment')->first() ? 'active' : '' !!}">S3</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 3)->where('col', 4)->where('value', 1)->where('type', 'right_sensory_impairment')->first() ? 'active' : '' !!}">S4</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 3)->where('col', 5)->where('value', 1)->where('type', 'right_sensory_impairment')->first() ? 'active' : '' !!}">S5</td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -549,7 +566,90 @@
                         </tr>
                         <tr>
                             <td>Caccxygeal</td>
-                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 4)->where('col', 1)->where('value', 1)->where('type', 'sensory_impairment')->first() ? 'active' : '' !!}">Cx</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 4)->where('col', 1)->where('value', 1)->where('type', 'right_sensory_impairment')->first() ? 'active' : '' !!}">Cx</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="ui celled blue table left-sensory-impairment">
+                        <thead>
+                        <h3>Left</h3>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Cervical</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 0)->where('col', 1)->where('value', 1)->where('type', 'left_sensory_impairment')->first() ? 'active' : '' !!}">C1</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 0)->where('col', 2)->where('value', 1)->where('type', 'left_sensory_impairment')->first() ? 'active' : '' !!}">C2</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 0)->where('col', 3)->where('value', 1)->where('type', 'left_sensory_impairment')->first() ? 'active' : '' !!}">C3</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 0)->where('col', 4)->where('value', 1)->where('type', 'left_sensory_impairment')->first() ? 'active' : '' !!}">C4</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 0)->where('col', 5)->where('value', 1)->where('type', 'left_sensory_impairment')->first() ? 'active' : '' !!}">C5</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 0)->where('col', 6)->where('value', 1)->where('type', 'left_sensory_impairment')->first() ? 'active' : '' !!}">C6</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 0)->where('col', 7)->where('value', 1)->where('type', 'left_sensory_impairment')->first() ? 'active' : '' !!}">C7</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 0)->where('col', 8)->where('value', 1)->where('type', 'left_sensory_impairment')->first() ? 'active' : '' !!}">C8</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Thoracic</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 1)->where('col', 1)->where('value', 1)->where('type', 'left_sensory_impairment')->first() ? 'active' : '' !!}">T1</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 1)->where('col', 2)->where('value', 1)->where('type', 'left_sensory_impairment')->first() ? 'active' : '' !!}">T2</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 1)->where('col', 3)->where('value', 1)->where('type', 'left_sensory_impairment')->first() ? 'active' : '' !!}">T3</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 1)->where('col', 4)->where('value', 1)->where('type', 'left_sensory_impairment')->first() ? 'active' : '' !!}">T4</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 1)->where('col', 5)->where('value', 1)->where('type', 'left_sensory_impairment')->first() ? 'active' : '' !!}">T5</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 1)->where('col', 6)->where('value', 1)->where('type', 'left_sensory_impairment')->first() ? 'active' : '' !!}">T6</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 1)->where('col', 7)->where('value', 1)->where('type', 'left_sensory_impairment')->first() ? 'active' : '' !!}">T7</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 1)->where('col', 8)->where('value', 1)->where('type', 'left_sensory_impairment')->first() ? 'active' : '' !!}">T8</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 1)->where('col', 9)->where('value', 1)->where('type', 'left_sensory_impairment')->first() ? 'active' : '' !!}">T9</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 1)->where('col', 10)->where('value', 1)->where('type', 'left_sensory_impairment')->first() ? 'active' : '' !!}">T10</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 1)->where('col', 11)->where('value', 1)->where('type', 'left_sensory_impairment')->first() ? 'active' : '' !!}">T11</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 1)->where('col', 12)->where('value', 1)->where('type', 'left_sensory_impairment')->first() ? 'active' : '' !!}">T12</td>
+                        </tr>
+                        <tr>
+                            <td>Lumbar</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 2)->where('col', 1)->where('value', 1)->where('type', 'left_sensory_impairment')->first() ? 'active' : '' !!}">L1</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 2)->where('col', 2)->where('value', 1)->where('type', 'left_sensory_impairment')->first() ? 'active' : '' !!}">L2</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 2)->where('col', 3)->where('value', 1)->where('type', 'left_sensory_impairment')->first() ? 'active' : '' !!}">L3</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 2)->where('col', 4)->where('value', 1)->where('type', 'left_sensory_impairment')->first() ? 'active' : '' !!}">L4</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 2)->where('col', 5)->where('value', 1)->where('type', 'left_sensory_impairment')->first() ? 'active' : '' !!}">L5</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Sacral</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 3)->where('col', 1)->where('value', 1)->where('type', 'left_sensory_impairment')->first() ? 'active' : '' !!}">S1</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 3)->where('col', 2)->where('value', 1)->where('type', 'left_sensory_impairment')->first() ? 'active' : '' !!}">S2</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 3)->where('col', 3)->where('value', 1)->where('type', 'left_sensory_impairment')->first() ? 'active' : '' !!}">S3</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 3)->where('col', 4)->where('value', 1)->where('type', 'left_sensory_impairment')->first() ? 'active' : '' !!}">S4</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 3)->where('col', 5)->where('value', 1)->where('type', 'left_sensory_impairment')->first() ? 'active' : '' !!}">S5</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Caccxygeal</td>
+                            <td class="{!! App\Examination::where('patient_id', $patient->id)->whereNull('surgical_followup_id')->where('row', 4)->where('col', 1)->where('value', 1)->where('type', 'left_sensory_impairment')->first() ? 'active' : '' !!}">Cx</td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -565,6 +665,7 @@
                         </tbody>
                     </table>
                 </div>
+
             </div>
         </div>
     </div>
@@ -765,7 +866,7 @@
 <div class="form-group {!! ($errors->has('diagnosis')) ? 'has-error' : '' !!} required">
     {!! Form::label('diagnosis', 'Diagnosis', ['class' => 'col-md-2 control-label']) !!}
     <div class="col-md-6">
-        {!! Form::select('diagnosis', ['' => 'Select Diagnosis' ,'Trauma' => 'Trauma', 'Degenerative disease' => 'Degenerative disease', 'Tumor' => 'Tumor', 'Congenital disease' => 'Congenital disease', 'Others' => 'Others'], null, ['class' => 'form-control']) !!}
+        {!! Form::select('diagnosis', ['' => 'Select Diagnosis' ,'Trauma' => 'Trauma', 'Degenerative disease' => 'Degenerative disease', 'Tumor' => 'Tumor', 'Congenital disease' => 'Congenital disease', 'Others' => 'Others'], null, ['class' => 'form-control multiple']) !!}
         <p class="help-block">{!! ($errors->has('diagnosis') ? $errors->first('diagnosis') : '') !!}</p>
     </div>
 </div>
@@ -797,7 +898,7 @@
                 <div class="form-group {!! ($errors->has('level_of_surgery')) ? 'has-error' : '' !!} required">
                     {!! Form::label('level_of_surgery', 'Level of Surgery', ['class' => 'col-md-2 control-label']) !!}
                     <div class="col-md-6">
-                        {!! Form::select('level_of_surgery', ['' => 'Select Level of Surgery', 'C1' => 'C1', 'C2' => 'C2', 'C3' => 'C3', 'C4' => 'C4', 'C5' => 'C5', 'C6' => 'C6', 'C7' => 'C7', 'T1' => 'T1', 'T2' => 'T2', 'T3' => 'T3', 'T4' => 'T4', 'T5' => 'T5', 'T6' => 'T6', 'T7' => 'T7', 'T8' => 'T8', 'T9' => 'T9', 'T10' => 'T10', 'T11' =>  'T11', 'T12' => 'T12', 'L1' => 'L1', 'L2' => 'L2', 'L3' => 'L3', 'L4' => 'L4', 'L5' => 'L5', 'S1' => 'S1'], null, ['class' => 'form-control']) !!}
+                        {!! Form::select('level_of_surgery', ['' => 'Select Level of Surgery', 'C1' => 'C1', 'C2' => 'C2', 'C3' => 'C3', 'C4' => 'C4', 'C5' => 'C5', 'C6' => 'C6', 'C7' => 'C7', 'T1' => 'T1', 'T2' => 'T2', 'T3' => 'T3', 'T4' => 'T4', 'T5' => 'T5', 'T6' => 'T6', 'T7' => 'T7', 'T8' => 'T8', 'T9' => 'T9', 'T10' => 'T10', 'T11' =>  'T11', 'T12' => 'T12', 'L1' => 'L1', 'L2' => 'L2', 'L3' => 'L3', 'L4' => 'L4', 'L5' => 'L5', 'S1' => 'S1'], null, ['class' => 'form-control multiple']) !!}
                         <p class="help-block">{!! ($errors->has('level_of_surgery') ? $errors->first('level_of_surgery') : '') !!}</p>
                     </div>
                 </div>

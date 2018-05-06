@@ -302,6 +302,9 @@ class PatientController extends Controller
         $diagnosis->surgery = $request->surgery;
         $diagnosis->sensory_impairment = $request->sensory_impairment;
         $diagnosis->abnormal_reflexes = $request->abnormal_reflexes;
+        $diagnosis->year = $request->year;
+        $diagnosis->month = $request->month;
+        $diagnosis->day = $request->day;
         $diagnosis->save();
 
         $patient->diagnosis = 'active';
@@ -398,6 +401,20 @@ class PatientController extends Controller
         $diagnosis->en_treatment_template = $request->en_treatment_template;
         $diagnosis->ta_treatment_template = $request->ta_treatment_template;
         $diagnosis->si_treatment_template = $request->si_treatment_template;
+
+
+
+        $diagnosis->date_of_admission = $request->date_of_admission;
+        $diagnosis->level_of_surgery = $request->level_of_surgery;
+        $diagnosis->type_of_surgery = $request->type_of_surgery;
+        $diagnosis->surgery = $request->surgery;
+        $diagnosis->sensory_impairment = $request->sensory_impairment;
+        $diagnosis->abnormal_reflexes = $request->abnormal_reflexes;
+        $diagnosis->year = $request->year;
+        $diagnosis->month = $request->month;
+        $diagnosis->day = $request->day;
+
+
         $diagnosis->save();
 
         $patient->diagnosis = 'active';

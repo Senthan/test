@@ -84,7 +84,8 @@
                 updateExamination(examination, url);
             });
 
-            $(".celled.table.sensory-impairment tr").on("click", "td", function (event) {
+
+            $(".celled.table.left-sensory-impairment tr").on("click", "td", function (event) {
                 var col = $(this).parent().children().index($(this));
                 var row = $(this).parent().parent().children().index($(this).parent());
 
@@ -96,14 +97,41 @@
                     clickElement = clickElement - 1;
                     examination.row = row;
                     examination.col = col;
-                    examination.type = 'sensory_impairment';
+                    examination.type = 'left_sensory_impairment';
                     examination.value = 0;
                 } else {
                     $(this).addClass('active');
                     clickElement = clickElement + 1;
                     examination.row = row;
                     examination.col = col;
-                    examination.type = 'sensory_impairment';
+                    examination.type = 'left_sensory_impairment';
+                    examination.value = 1;
+                }
+                examination.diagnosis = 'diagnosis';
+                updateExamination(examination, url);
+            });
+
+
+            $(".celled.table.right-sensory-impairment tr").on("click", "td", function (event) {
+                var col = $(this).parent().children().index($(this));
+                var row = $(this).parent().parent().children().index($(this).parent());
+
+                var examination = {};
+                if ( $( this ).is( ":first-child" ) ) {
+
+                } else if($(this).hasClass('active')) {
+                    $(this).removeClass('active');
+                    clickElement = clickElement - 1;
+                    examination.row = row;
+                    examination.col = col;
+                    examination.type = 'right_sensory_impairment';
+                    examination.value = 0;
+                } else {
+                    $(this).addClass('active');
+                    clickElement = clickElement + 1;
+                    examination.row = row;
+                    examination.col = col;
+                    examination.type = 'right_sensory_impairment';
                     examination.value = 1;
                 }
                 examination.diagnosis = 'diagnosis';
