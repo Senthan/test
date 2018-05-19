@@ -64,7 +64,7 @@
             var NUMBER_GROUPS = /(-?\d*\.?\d+)/g;
 
             var myAwesomeSortFn = function (a, b) {
-
+                    console.log('a', a, 'b', b);
                 var aa = String(a).split(NUMBER_GROUPS),
                     bb = String(b).split(NUMBER_GROUPS),
                     min = Math.min(aa.length, bb.length);

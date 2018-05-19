@@ -337,6 +337,9 @@
                 format: 'YYYY-MM-DD'
             });
 
+
+            $('.ui.dropdown')
+                .dropdown({});
         });
     </script>
 @endsection

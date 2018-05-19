@@ -301,6 +301,7 @@ class PatientController extends Controller
         $diagnosis->type_of_surgery = $request->type_of_surgery;
         $diagnosis->surgery = $request->surgery;
         $diagnosis->sensory_impairment = $request->sensory_impairment;
+        $diagnosis->motor_impairment = $request->motor_impairment;
         $diagnosis->abnormal_reflexes = json_encode($request->abnormal_reflexes);
         $diagnosis->year = $request->year;
         $diagnosis->month = $request->month;
@@ -372,6 +373,7 @@ class PatientController extends Controller
         $diagnosis->allergic_history = $diagnosis->allergic_history ? json_decode($diagnosis->allergic_history) : '';
         $diagnosis->diagnosis = is_string($diagnosis->diagnosis) && is_array(json_decode($diagnosis->diagnosis, true)) ? json_decode($diagnosis->diagnosis) : '';
         $diagnosis->level_of_surgery = is_string($diagnosis->level_of_surgery) && is_array(json_decode($diagnosis->level_of_surgery, true))  ? json_decode($diagnosis->level_of_surgery) : '';
+//        dd($diagnosis);
         return view('admin.patient.diagnosis.edit', compact('examination', 'bioChemistry', 'microBiology', 'drugs','doses','followUp', 'patient', 'consultants','diagnosis', 'diagnosisTypes', 'diagnosisTypeNames', 'surgeryType', 'examination', 'bloodTest', 'investigationUltraSoundScan'));
 
     }
@@ -413,14 +415,14 @@ class PatientController extends Controller
         $diagnosis->type_of_surgery = $request->type_of_surgery;
         $diagnosis->surgery = $request->surgery;
         $diagnosis->sensory_impairment = $request->sensory_impairment;
+        $diagnosis->motor_impairment = $request->motor_impairment;
         $diagnosis->abnormal_reflexes = $request->abnormal_reflexes;
         $diagnosis->year = $request->year;
         $diagnosis->month = $request->month;
         $diagnosis->day = $request->day;
 
-
         $diagnosis->save();
-
+//dd($diagnosis, $request->all());
         $patient->diagnosis = 'active';
         $patient->save();
 
