@@ -61,9 +61,10 @@
 
 //        var myAwesomeSortFn = function(a,b) {
 
-            var NUMBER_GROUPS = /(-?\d*\.?\d+)/g;
+
 
             var myAwesomeSortFn = function (a, b) {
+                var NUMBER_GROUPS = /(-?\d*\.?\d+)/g;
                     console.log('a', a, 'b', b);
                 var aa = String(a).split(NUMBER_GROUPS),
                     bb = String(b).split(NUMBER_GROUPS),

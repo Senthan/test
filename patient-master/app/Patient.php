@@ -60,6 +60,6 @@ class Patient extends Model
 
     public function setPatientUuidAttribute($value)
     {
-        $this->attributes['patient_uuid'] = str_contains($value, 'OSC') ? $value : 'OSC' . str_finish($value, 'S');
+        $this->attributes['patient_uuid'] = str_contains($value, 'OC') ? $value : 'OC' . str_finish($value, 'S');
     }
 }
