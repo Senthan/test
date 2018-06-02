@@ -47,7 +47,7 @@
         <entry file="file://$PROJECT_DIR$/patient-master/resources/views/admin/layouts/footer.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
-              <caret line="1" column="79" lean-forward="false" selection-start-line="1" selection-start-column="72" selection-end-line="1" selection-end-column="79" />
+              <caret line="1" column="79" lean-forward="false" selection-start-line="1" selection-start-column="79" selection-end-line="1" selection-end-column="79" />
               <folding />
             </state>
           </provider>
@@ -176,8 +176,8 @@
         <option value="$PROJECT_DIR$/patient-master/resources/views/admin/patient/index.blade.php" />
         <option value="$PROJECT_DIR$/patient-master/resources/views/admin/layouts/master.blade.php" />
         <option value="$PROJECT_DIR$/patient-master/resources/views/admin/chat/popup.blade.php" />
-        <option value="$PROJECT_DIR$/patient-master/resources/views/admin/layouts/footer.blade.php" />
         <option value="$PROJECT_DIR$/patient-master/.env" />
+        <option value="$PROJECT_DIR$/patient-master/resources/views/admin/layouts/footer.blade.php" />
       </list>
     </option>
   </component>
@@ -317,6 +317,19 @@
               <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="layouts" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+            <path>
+              <item name="test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="test" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="patient-master" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="storage" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="test" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="patient-master" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="storage" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="logs" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -389,12 +402,12 @@
       <workItem from="1526732212153" duration="6490000" />
       <workItem from="1526865607856" duration="576000" />
       <workItem from="1526951199396" duration="70000" />
-      <workItem from="1527913302378" duration="1820000" />
+      <workItem from="1527913302378" duration="3208000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101010000" />
+    <option name="totallyTimeSpent" value="102398000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -806,7 +819,7 @@
     <entry file="file://$PROJECT_DIR$/patient-master/resources/views/admin/layouts/footer.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
-          <caret line="1" column="79" lean-forward="false" selection-start-line="1" selection-start-column="72" selection-end-line="1" selection-end-column="79" />
+          <caret line="1" column="79" lean-forward="false" selection-start-line="1" selection-start-column="79" selection-end-line="1" selection-end-column="79" />
           <folding />
         </state>
       </provider>
