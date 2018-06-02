@@ -70,17 +70,23 @@
                     bb = String(b).split(NUMBER_GROUPS),
                     min = Math.min(aa.length, bb.length);
 
-                for (var i = 0; i < min; i++) {
-                    var x = parseFloat(aa[i]) || aa[i].toLowerCase(),
-                        y = parseFloat(bb[i]) || bb[i].toLowerCase();
-                    if (x < y) return -1;
-                    else if (x > y) return 1;
-                }
+                var x = aa[1] + aa[3];
+                var y = bb[1] + bb[3];
+
+                if (x < y) return -1;
+                else if (x > y) return 1;
+
+//                for (var i = 0; i < min; i++) {
+//                    var x = parseFloat(aa[i]),
+//                        y = parseFloat(bb[i]);
+//                    if (x < y) return -1;
+//                    else if (x > y) return 1;
+//                }
 
                 return 0;
             };
             var columnDefs = [
-                { displayName: 'OSC No', field: 'patient_uuid', minWidth: 100, width: 130, pinnedLeft:true, sortFn: myAwesomeSortFn},
+                { displayName: 'OSC No', field: 'patient_uuid', minWidth: 100, width: 130, pinnedLeft:true, sortAlgorithm: myAwesomeSortFn},
                 { displayName: 'Name', field: 'name', minWidth: 150, width: 150},
                 { displayName: 'Age', field: 'age', minWidth: 60, width: 60},
                 { displayName: 'Sex', field: 'sex', editableCellTemplate: 'ui-grid/dropdownEditor',

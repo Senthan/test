@@ -47,7 +47,7 @@
     <script src="{{ asset('components/angular-file-upload/dist/angular-file-upload.js') }}"></script>
     <script src="{{ asset('components/socket.io-client/socket.io.js') }}"></script>
     <script src="{{ asset('components/Chart.js/dist/Chart.min.js') }}"></script>
-    <script src="{{ asset('assets/admin/js/chat.js') }}"></script>
+    {{--<script src="{{ asset('assets/admin/js/chat.js') }}"></script>--}}
     <script src="{{ asset('components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('components\semantic\dist\semantic.js') }}"></script>
     <script src="{{ asset('components/ezdz/src/jquery.ezdz.js') }}"></script>
