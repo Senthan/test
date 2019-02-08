@@ -1,0 +1,15 @@
+{
+  "name": "CSV-JS",
+  "version": "1.0.2",
+  "description": "A Comma-Separated Values parser for JavaScript. Standards-based, stand alone, and no regular expressions.",
+  "main": "csv.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/c0bra/CSV-JS.git"
+  },
+  "author": "Greg Kindel (twitter @gkindel), 2013",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gkindel/CSV-JS/issues"
+  }
+}

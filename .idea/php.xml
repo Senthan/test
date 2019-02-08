@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="$PROJECT_DIR$/patient-master/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/barryvdh/laravel-dompdf" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/psy/psysh" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/simshaun/recurr" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/mtdowling/cron-expression" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/fzaninotto/faker" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/predis/predis" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/composer" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/laracasts/flash" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/phpunit/phpunit-mock-objects" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/mockery/mockery" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/phpunit/php-token-stream" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/hamcrest/hamcrest-php" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/laravel/framework" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/maatwebsite/excel" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/laravelcollective/html" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/hashids/hashids" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/symfony/dom-crawler" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/symfony/polyfill-util" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/symfony/polyfill-php56" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/symfony/debug" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/league/fractal" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/league/flysystem" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/dnoegel/php-xdg-base-dir" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/jeremeamia/SuperClosure" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/jakub-onderka/php-console-color" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/jakub-onderka/php-console-highlighter" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/dompdf/dompdf" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/classpreloader/classpreloader" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/phenx/php-font-lib" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/phpoffice/phpexcel" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/tijsverkoyen/css-to-inline-styles" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/patient-master/vendor/doctrine/collections" />
+    </include_path>
+  </component>
+  <component name="PhpProjectSharedConfiguration" php_language_level="5.5.0" />
+  <component name="PhpUnit">
+    <phpunit_settings>
+      <PhpUnitSettings load_method="CUSTOM_LOADER" custom_loader_path="$PROJECT_DIR$/patient-master/vendor/autoload.php" />
+    </phpunit_settings>
+  </component>
+</project>

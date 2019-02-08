@@ -1,0 +1,39 @@
+{
+  "name": "semantic-ui-checkbox",
+  "description": "Checkbox - Semantic UI",
+  "homepage": "http://www.semantic-ui.com",
+  "author": {
+    "name": "Jack Lukic",
+    "web": "http://www.jacklukic.com"
+  },
+  "ignore": [
+    "docs",
+    "node",
+    "server",
+    "spec",
+    "src",
+    "test"
+  ],
+  "keywords": [
+    "semantic",
+    "ui",
+    "css3",
+    "framework"
+  ],
+  "license": [
+    "http://semantic-ui.mit-license.org/"
+  ],
+  "main": [
+    "checkbox.css"
+  ],
+  "version": "2.4.1",
+  "_release": "2.4.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "2.4.1",
+    "commit": "7d65223e8b29baa777d824d5fe63a837a09ae409"
+  },
+  "_source": "https://github.com/Semantic-Org/UI-Checkbox.git",
+  "_target": "^2.1.7",
+  "_originalSource": "semantic-ui-checkbox"
+}

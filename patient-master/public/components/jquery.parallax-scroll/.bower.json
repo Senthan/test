@@ -1,0 +1,13 @@
+{
+  "name": "jquery.parallax-scroll",
+  "homepage": "https://github.com/alumbo/jquery.parallax-scroll",
+  "_release": "a9450a16d9",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "a9450a16d93590fb15b5aa5cc1bd5694864bf8a8"
+  },
+  "_source": "https://github.com/alumbo/jquery.parallax-scroll.git",
+  "_target": "*",
+  "_originalSource": "jquery.parallax-scroll"
+}
